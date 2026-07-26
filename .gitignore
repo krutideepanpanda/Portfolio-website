@@ -1,0 +1,16 @@
+# Antigravity & AI settings
+Antigravity/
+.gemini/
+.codex/
+scratch/
+
+# OS generated files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Node / Dependencies (if added later)
+node_modules/
+.env
+dist/
+build/
