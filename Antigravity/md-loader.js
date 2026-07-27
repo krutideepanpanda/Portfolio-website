@@ -20,7 +20,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const postId = urlParams.get('id') || urlParams.get('post') || 'ml-cad-automation';
 
   let mdText = '';
-  const pathsToTry = [`../Blog/${postId}/article.md`, `/Blog/${postId}/article.md`, `./${postId}/article.md`];
+  const pathsToTry = [
+    `../Blog/${postId}/article.md`,
+    `/Blog/${postId}/article.md`,
+    `./${postId}/article.md`,
+    `../Blog/${postId}/article.html`,
+    `/Blog/${postId}/article.html`
+  ];
   let loadedPath = '';
 
   for (const path of pathsToTry) {
@@ -130,8 +136,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Custom blockquote styling (converts > [!NOTE] or > [!TIP] to GitHub style alerts/callouts)
   const originalBlockquote = renderer.blockquote.bind(renderer);
-  renderer.blockquote = (quote) => {
-    if (quote.includes('[!NOTE]') || quote.includes('[!TIP]') || quote.includes('[!IMPORTANT]') || quote.includes('[!WARNING]')) {
+  renderer.blockquote = (token) => {
+    // Robust token vs string handling across Marked versions
+    const quote = typeof token === 'string' ? token : (token.text || token.raw || '');
+    if (quote.includes('[!NOTE]') || quote.includes('[!TIP]') || quote.includes('[!IMPORTANT]') || quote.includes('[!WARNING]') || quote.includes('[!CAUTION]')) {
       let icon = 'fa-lightbulb';
       let title = 'Key Insight';
       let color = 'var(--accent-cyan)';
@@ -157,7 +165,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       `;
     }
-    return originalBlockquote(quote);
+    return originalBlockquote(token);
   };
 
   marked.setOptions({
