@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Projects | Kruti Deepan Panda | Silicon Design Engineer</title>
+  <meta name="description" content="Showcase of VLSI, ASIC, FPGA, and Analog CAD automation projects architected by Kruti Deepan Panda including RISC-V OpenLane tapeout and ML circuit generation.">
+  <link rel="canonical" href="https://krutideepanpanda.com/Antigravity/projects.html">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glows & Interactive Circuit Canvas -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <canvas id="circuit-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <i class="fa-solid fa-microchip"></i>
+      Kruti Deepan <span>Panda</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link" style="color: var(--accent-cyan);"><i class="fa-solid fa-arrow-left" style="margin-right: 0.4rem;"></i>Portal</a></li>
+      <li><a href="about.html" class="nav-link">01 // About</a></li>
+      <li><a href="experience.html" class="nav-link">02 // Experience</a></li>
+      <li><a href="projects.html" class="nav-link">03 // Projects</a></li>
+      <li><a href="skills.html" class="nav-link">04 // Skills</a></li>
+      <li><a href="leadership.html" class="nav-link">05 // Leadership</a></li>
+      <li class="nav-item-dropdown">
+        <a href="blog.html" class="nav-link dropdown-toggle">06 // Blog <i class="fa-solid fa-angle-down" style="margin-left: 0.25rem; font-size: 0.75rem; opacity: 0.8;"></i></a>
+        <ul class="dropdown-menu" id="blog-nav-menu">
+          <li><a href="blog.html" class="dropdown-item"><i class="fa-solid fa-layer-group" style="margin-right: 0.6rem; color: var(--accent-cyan);"></i>All Blog Articles</a></li>
+          <li><a href="article.html?id=ml-cad-automation" class="dropdown-item"><i class="fa-solid fa-file-code" style="margin-right: 0.6rem; color: var(--accent-indigo);"></i>Accelerating Analog CAD Workflows</a></li>
+          <li><a href="article.html?id=riscv-openlane-tapeouts" class="dropdown-item"><i class="fa-solid fa-microchip" style="margin-right: 0.6rem; color: var(--accent-purple);"></i>Lessons from 10+ ASIC Tapeouts</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="nav-btn">Get In Touch</a></li>
+    </ul>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Page Header Banner -->
+  <div class="page-header">
+    <h1 class="page-title">03 // <span>Featured Projects</span></h1>
+    <p class="page-subtitle">Hardware & Software Engineering Showcase: VLSI Architecture, FPGA Accelerators, and Analog Automation Tools</p>
+  </div>
+
+  <!-- Standalone Projects Section -->
+  <main class="standalone-section">
+    <div class="container reveal active">
+      <div class="project-filters" style="margin-bottom: 3.5rem;">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="vlsi">VLSI & ASIC Design</button>
+        <button class="filter-btn" data-filter="fpga">FPGA & Hardware</button>
+        <button class="filter-btn" data-filter="systems">Systems & Embedded</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: RISC-V OpenLane -->
+        <div class="project-card-wrapper" data-category="vlsi fpga">
+          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div>
+              <div class="project-top">
+                <div class="project-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="project-links">
+                  <a href="https://github.com/krutideepanpanda/RISC-V-based-micro-controller-using-OpenLane" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">RISC-V Microcontroller using OpenLane</h3>
+              <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 500;">Under Prof. Ramesh Kini, NITK | Jan 2022 – Apr 2022</span>
+              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                Configured open-source RISC-V core <strong style="color: var(--text-primary);">PICORV32</strong> with custom co-processors and modified the OpenLane flow for manufacturing GDSII files using <strong style="color: var(--text-primary);">SkyWater 130nm PDK</strong>. Performed extensive design space exploration across area and delay optimization.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">Max Frequency</span>
+                  <span class="metric-val" style="color: var(--accent-cyan);">250 MHz Clock</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Chip Area</span>
+                  <span class="metric-val" style="color: var(--accent-cyan);">0.49 – 0.70 mm²</span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Verilog</span>
+              <span class="tech-tag">OpenLane</span>
+              <span class="tech-tag">SkyWater 130nm</span>
+              <span class="tech-tag">RISC-V Core</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Configurable CNN FPGA -->
+        <div class="project-card-wrapper" data-category="fpga systems">
+          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div>
+              <div class="project-top">
+                <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <div class="project-links">
+                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Configurable Framework for CNN on Hardware</h3>
+              <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 500;">Under Prof. Sumam David, NITK | Jan 2023 – Apr 2023</span>
+              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                Designed scalable memory architectures to efficiently utilize onboard <strong style="color: var(--text-primary);">FPGA BRAM</strong> to load input parameters of CNNs of any kernel size and stride length. Exploited pixel re-usability during convolution to drastically reduce LUT utilization.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">Optimization</span>
+                  <span class="metric-val" style="color: var(--accent-indigo);">Low LUT / BRAM</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Scalability</span>
+                  <span class="metric-val" style="color: var(--accent-indigo);">Any Kernel / Stride</span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">FPGA Design</span>
+              <span class="tech-tag">Hardware Accelerator</span>
+              <span class="tech-tag">CNN Architecture</span>
+              <span class="tech-tag">Verilog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: MIT Beta-ISA Pipelined CPU -->
+        <div class="project-card-wrapper" data-category="vlsi systems">
+          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div>
+              <div class="project-top">
+                <div class="project-icon"><i class="fa-solid fa-server"></i></div>
+                <div class="project-links">
+                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">MIT Beta-ISA Pipelined Microprocessor</h3>
+              <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 500;">Under Prof. MS Bhat, NITK | Jan 2023 – Apr 2023</span>
+              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                Architected a full <strong style="color: var(--text-primary);">5-stage pipelined microprocessor</strong> (Instruction Fetch, Decode, ALU, Memory, Write-Back) based on MIT OCW Beta-ISA. Built a custom GUI-based assembler in Python to translate assembly code to machine code.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">Architecture</span>
+                  <span class="metric-val" style="color: var(--accent-purple);">5-Stage Pipeline</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Toolchain</span>
+                  <span class="metric-val" style="color: var(--accent-purple);">Python GUI Assembler</span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">CPU Architecture</span>
+              <span class="tech-tag">Beta-ISA</span>
+              <span class="tech-tag">Verilog</span>
+              <span class="tech-tag">Python Assembler</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Security Module with AES -->
+        <div class="project-card-wrapper" data-category="vlsi systems">
+          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div>
+              <div class="project-top">
+                <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="project-links">
+                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Security Module for Microprocessor</h3>
+              <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 500;">October 2020 – March 2021</span>
+              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                Designed a 32-bit RISC processor in Verilog with its own ISA. Integrated a <strong style="color: var(--text-primary);">128-bit AES encryption block</strong> to encrypt data/instructions in memory, thwarting hardware probing attacks. Developed a Python assembler that encrypts machine code on the fly.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">Security Engine</span>
+                  <span class="metric-val" style="color: var(--accent-cyan);">128-bit AES Hardware</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Protection</span>
+                  <span class="metric-val" style="color: var(--accent-cyan);">Anti-Probing Memory</span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Hardware Security</span>
+              <span class="tech-tag">AES Encryption</span>
+              <span class="tech-tag">32-bit RISC</span>
+              <span class="tech-tag">Verilog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: 4-bit ALU Magic VLSI -->
+        <div class="project-card-wrapper" data-category="vlsi">
+          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div>
+              <div class="project-top">
+                <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="project-links">
+                  <a href="https://github.com/krutideepanpanda/4-Bit-ALU-using-Magic-VLSI" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">4-bit ALU using Magic VLSI</h3>
+              <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 500;">Under Prof. Ramesh Kini, NITK | Nov 2021</span>
+              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                Implemented a 4-bit ALU capable of Addition, AND, and OR operations using <strong style="color: var(--text-primary);">Pharosc vcslib 130nm technology</strong> standard cells. Wrote an automated bash testbench script that generates random test cases and verifies layout outputs.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">Standard Cells</span>
+                  <span class="metric-val" style="color: var(--accent-indigo);">Pharosc 130nm</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Layout Area</span>
+                  <span class="metric-val" style="color: var(--accent-indigo);">169,061 sq. µm</span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Magic VLSI</span>
+              <span class="tech-tag">Custom Layout</span>
+              <span class="tech-tag">Bash Automation</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Object Detection RPi -->
+        <div class="project-card-wrapper" data-category="systems">
+          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div>
+              <div class="project-top">
+                <div class="project-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                <div class="project-links">
+                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Live Object Detection Using Raspberry Pi</h3>
+              <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 500;">Under Prof. Sumam David, NITK | Jan 2021 – Mar 2021</span>
+              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                Deployed <strong style="color: var(--text-primary);">MobileNet-SSD V2</strong> object detection model on Raspberry Pi with remote SFTP access. Optimized frame pipeline and downscaled video stream to 480p to achieve real-time live object detection at a steady 15 FPS.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">Live Performance</span>
+                  <span class="metric-val" style="color: var(--accent-purple);">15 FPS Real-Time</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Edge Model</span>
+                  <span class="metric-val" style="color: var(--accent-purple);">MobileNet-SSD V2</span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Raspberry Pi</span>
+              <span class="tech-tag">Edge AI</span>
+              <span class="tech-tag">Computer Vision</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding: 4rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9rem;">
+    <div class="container">
+      <p style="margin-bottom: 1rem;">Designed & Architected by <strong style="color: var(--text-primary);">Kruti Deepan Panda</strong> // Built with Antigravity 2.0</p>
+      <div style="display: flex; justify-content: center; gap: 1.5rem; font-size: 1.25rem;">
+        <a href="https://linkedin.com" target="_blank" style="color: var(--text-muted); transition: color 0.3s;"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/krutideepanpanda" target="_blank" style="color: var(--text-muted); transition: color 0.3s;"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:contact@krutideepanpanda.com" style="color: var(--text-muted); transition: color 0.3s;"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

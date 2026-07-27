@@ -220,7 +220,7 @@ function initNavigation() {
 
   navItems.forEach((item) => {
     item.addEventListener('click', () => {
-      if (navLinks.classList.contains('active')) {
+      if (navLinks && navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
         const spans = menuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
@@ -228,8 +228,18 @@ function initNavigation() {
         spans[2].style.transform = 'none';
       }
     });
+
+    // Active page highlighting
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const href = item.getAttribute('href');
+    if (href && (href === currentPath || (currentPath === 'index.html' && href === '#'))) {
+      item.style.color = 'var(--accent-cyan)';
+      item.style.fontWeight = '700';
+      item.style.textShadow = '0 0 10px rgba(0, 240, 255, 0.4)';
+    }
   });
 }
+
 
 /* ==========================================================================
    3. Scroll Reveal Animations

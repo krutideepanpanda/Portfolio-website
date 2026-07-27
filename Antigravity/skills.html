@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills & Expertise | Kruti Deepan Panda | Silicon Design Engineer</title>
+  <meta name="description" content="Technical expertise of Kruti Deepan Panda across VLSI CAD tools, Verilog/SystemVerilog HDLs, RISC-V architectures, and Python/TCL automation scripting.">
+  <link rel="canonical" href="https://krutideepanpanda.com/Antigravity/skills.html">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glows & Interactive Circuit Canvas -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <canvas id="circuit-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <i class="fa-solid fa-microchip"></i>
+      Kruti Deepan <span>Panda</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link" style="color: var(--accent-cyan);"><i class="fa-solid fa-arrow-left" style="margin-right: 0.4rem;"></i>Portal</a></li>
+      <li><a href="about.html" class="nav-link">01 // About</a></li>
+      <li><a href="experience.html" class="nav-link">02 // Experience</a></li>
+      <li><a href="projects.html" class="nav-link">03 // Projects</a></li>
+      <li><a href="skills.html" class="nav-link">04 // Skills</a></li>
+      <li><a href="leadership.html" class="nav-link">05 // Leadership</a></li>
+      <li class="nav-item-dropdown">
+        <a href="blog.html" class="nav-link dropdown-toggle">06 // Blog <i class="fa-solid fa-angle-down" style="margin-left: 0.25rem; font-size: 0.75rem; opacity: 0.8;"></i></a>
+        <ul class="dropdown-menu" id="blog-nav-menu">
+          <li><a href="blog.html" class="dropdown-item"><i class="fa-solid fa-layer-group" style="margin-right: 0.6rem; color: var(--accent-cyan);"></i>All Blog Articles</a></li>
+          <li><a href="article.html?id=ml-cad-automation" class="dropdown-item"><i class="fa-solid fa-file-code" style="margin-right: 0.6rem; color: var(--accent-indigo);"></i>Accelerating Analog CAD Workflows</a></li>
+          <li><a href="article.html?id=riscv-openlane-tapeouts" class="dropdown-item"><i class="fa-solid fa-microchip" style="margin-right: 0.6rem; color: var(--accent-purple);"></i>Lessons from 10+ ASIC Tapeouts</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="nav-btn">Get In Touch</a></li>
+    </ul>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Page Header Banner -->
+  <div class="page-header">
+    <h1 class="page-title">04 // <span>Technical Arsenal</span></h1>
+    <p class="page-subtitle">Domain Competencies: EDA Toolchains, Hardware Description Languages, and Software Automation</p>
+  </div>
+
+  <!-- Standalone Skills Section -->
+  <main class="standalone-section">
+    <div class="container reveal active">
+      <div class="skills-container" style="gap: 3rem;">
+        <!-- Category 1: VLSI & CAD Tools -->
+        <div class="skill-category" style="background: var(--bg-card); border: 1px solid rgba(0, 240, 255, 0.2); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0, 240, 255, 0.05);">
+          <h3 class="skill-cat-title" style="font-size: 1.5rem; color: var(--text-primary); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.2rem; margin-bottom: 1.8rem;">
+            <i class="fa-solid fa-screwdriver-wrench skill-cat-icon" style="color: var(--accent-cyan);"></i>
+            VLSI CAD & Verification Tools
+          </h3>
+          <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem;">
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> OpenLane Flow</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> Magic VLSI</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> Ansys Redhawk</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> XModel</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> Ngspice</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> Analog CAD Automation</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> Synthesis & Optimization</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-check skill-icon-mini" style="color: var(--accent-cyan);"></i> CMOS Logic Design</div>
+          </div>
+        </div>
+
+        <!-- Category 2: HDLs & Architectures -->
+        <div class="skill-category" style="background: var(--bg-card); border: 1px solid rgba(99, 102, 241, 0.2); padding: 2.5rem; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.05);">
+          <h3 class="skill-cat-title" style="font-size: 1.5rem; color: var(--text-primary); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.2rem; margin-bottom: 1.8rem;">
+            <i class="fa-solid fa-microchip skill-cat-icon" style="color: var(--accent-indigo);"></i>
+            HDLs & Hardware Architecture
+          </h3>
+          <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem;">
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> Verilog HDL</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> RISC-V (PICORV32)</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> ARM v7</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> MIPS Architecture</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> RNM Modeling</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> High-Performance Computing</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> Computer Architecture</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-code skill-icon-mini" style="color: var(--accent-indigo);"></i> FPGA BRAM / LUTs</div>
+          </div>
+        </div>
+
+        <!-- Category 3: Programming & Scripting -->
+        <div class="skill-category" style="background: var(--bg-card); border: 1px solid rgba(168, 85, 247, 0.2); padding: 2.5rem; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.05);">
+          <h3 class="skill-cat-title" style="font-size: 1.5rem; color: var(--text-primary); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.2rem; margin-bottom: 1.8rem;">
+            <i class="fa-solid fa-terminal skill-cat-icon" style="color: var(--accent-purple);"></i>
+            Software & Automation Scripting
+          </h3>
+          <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem;">
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-brands fa-python skill-icon-mini" style="color: var(--accent-purple);"></i> Python (ML & GUI)</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-c skill-icon-mini" style="color: var(--accent-purple);"></i> C / C++</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-file-code skill-icon-mini" style="color: var(--accent-purple);"></i> MATLAB</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-file-code skill-icon-mini" style="color: var(--accent-purple);"></i> TCL Scripting</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-file-code skill-icon-mini" style="color: var(--accent-purple);"></i> Perl</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-solid fa-terminal skill-icon-mini" style="color: var(--accent-purple);"></i> Bash / Shell Scripting</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-brands fa-git-alt skill-icon-mini" style="color: var(--accent-purple);"></i> Git & Version Control</div>
+            <div class="skill-box" style="padding: 1.2rem; font-size: 1.05rem;"><i class="fa-brands fa-linux skill-icon-mini" style="color: var(--accent-purple);"></i> Linux / SFTP / RPi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding: 4rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9rem;">
+    <div class="container">
+      <p style="margin-bottom: 1rem;">Designed & Architected by <strong style="color: var(--text-primary);">Kruti Deepan Panda</strong> // Built with Antigravity 2.0</p>
+      <div style="display: flex; justify-content: center; gap: 1.5rem; font-size: 1.25rem;">
+        <a href="https://linkedin.com" target="_blank" style="color: var(--text-muted); transition: color 0.3s;"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/krutideepanpanda" target="_blank" style="color: var(--text-muted); transition: color 0.3s;"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:contact@krutideepanpanda.com" style="color: var(--text-muted); transition: color 0.3s;"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

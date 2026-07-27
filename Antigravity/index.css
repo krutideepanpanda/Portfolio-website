@@ -1385,3 +1385,37 @@ footer span {
   transform: translateX(5px);
 }
 
+/* Standalone Page Header Styling */
+.page-header {
+  padding: 8.5rem 0 3.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 10;
+}
+.page-header .page-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.page-header .page-title span {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+}
+.page-header .page-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Standalone Content Padding adjustment */
+.standalone-section {
+  padding: 0 0 6rem 0 !important;
+  min-height: 60vh;
+}
