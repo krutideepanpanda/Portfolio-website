@@ -376,6 +376,19 @@ async function initBlogLoader() {
     blogGrid.appendChild(card);
   });
 
+  // Dynamically populate top navigation dropdown menu with loaded blog posts
+  const blogNavMenu = document.getElementById('blog-nav-menu');
+  if (blogNavMenu) {
+    blogNavMenu.innerHTML = `
+      <li><a href="#blog" class="dropdown-item"><i class="fa-solid fa-layer-group" style="margin-right: 0.6rem; color: var(--accent-cyan);"></i>All Blog Articles (#blog)</a></li>
+    `;
+    posts.forEach((post) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${post.url}" class="dropdown-item"><i class="fa-solid fa-file-code" style="margin-right: 0.6rem; color: var(--accent-indigo);"></i>${post.title}</a>`;
+      blogNavMenu.appendChild(li);
+    });
+  }
+
   // Re-initialize scroll reveal for new blog cards if reveal observer is active
   if (typeof initScrollReveal === 'function') {
     setTimeout(initScrollReveal, 100);
