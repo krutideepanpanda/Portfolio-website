@@ -168,6 +168,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     return originalBlockquote(token);
   };
 
+  // Responsive table wrapper
+  const originalTable = renderer.table.bind(renderer);
+  renderer.table = (token) => {
+    const tableHtml = originalTable(token);
+    return `<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; margin: 2rem 0;">${tableHtml}</div>`;
+  };
+
   marked.setOptions({
     renderer: renderer,
     gfm: true,

@@ -37,18 +37,18 @@ body {
   color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.8;
-  padding: 3rem 1.5rem;
+  padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 3vw, 1.5rem);
   min-height: 100vh;
 }
 
 .article-container {
-  max-width: 800px;
+  max-width: clamp(800px, 72vw, 1080px);
   width: 100%;
   margin: 0 auto;
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
-  border-radius: 20px;
-  padding: 3.5rem 3rem;
+  border-radius: clamp(12px, 2.5vw, 20px);
+  padding: clamp(1.8rem, 5vw, 3.5rem) clamp(1.2rem, 5vw, 3rem);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
   position: relative;
 }
@@ -60,7 +60,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  border-radius: 20px 20px 0 0;
+  border-radius: clamp(12px, 2.5vw, 20px) clamp(12px, 2.5vw, 20px) 0 0;
   background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo));
 }
 
@@ -73,8 +73,8 @@ body {
   text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 2.5rem;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   padding: 0.5rem 1.2rem;
   background: rgba(0, 242, 254, 0.1);
   border: 1px solid rgba(0, 242, 254, 0.25);
@@ -91,9 +91,9 @@ body {
 .article-meta {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: clamp(0.6rem, 2vw, 1.2rem);
   flex-wrap: wrap;
-  font-size: 0.88rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.88rem);
   color: var(--text-muted);
   margin-bottom: 1.2rem;
 }
@@ -104,68 +104,69 @@ body {
   padding: 0.25rem 0.8rem;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: clamp(0.72rem, 1.6vw, 0.78rem);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .article-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 3rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  word-break: break-word;
 }
 
 .article-author {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
   border-bottom: 1px solid var(--border-glass);
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .author-info h4 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
   color: #ffffff;
 }
 
 .author-info span {
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1.8vw, 0.85rem);
   color: var(--text-muted);
 }
 
 /* Article Typography */
 .article-content h2 {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
   color: #ffffff;
-  margin: 2.5rem 0 1rem 0;
+  margin: clamp(1.8rem, 4vw, 2.5rem) 0 1rem 0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .article-content h3 {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 2.8vw, 1.4rem);
   color: var(--accent-cyan);
-  margin: 2rem 0 0.8rem 0;
+  margin: clamp(1.5rem, 3.5vw, 2rem) 0 0.8rem 0;
 }
 
 .article-content p {
   margin-bottom: 1.5rem;
   color: #d1d5db;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
   line-height: 1.85;
 }
 
 .article-content ul, .article-content ol {
-  margin: 0 0 1.5rem 1.8rem;
+  margin: 0 0 1.5rem clamp(1.2rem, 3vw, 1.8rem);
   color: #d1d5db;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
 }
 
 .article-content li {
@@ -178,12 +179,30 @@ pre {
   border: 1px solid var(--border-glass);
   border-left: 4px solid var(--accent-cyan);
   border-radius: 8px;
-  padding: 1.2rem 1.5rem;
+  padding: clamp(0.8rem, 2.5vw, 1.2rem) clamp(0.8rem, 3vw, 1.5rem);
   margin: 2rem 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
   font-family: var(--font-code);
-  font-size: 0.95rem;
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
   color: #e2e8f0;
+}
+
+code {
+  font-family: var(--font-code);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  word-break: break-word;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  word-break: normal;
 }
 
 .callout {
@@ -191,26 +210,67 @@ pre {
   border: 1px solid rgba(99, 102, 241, 0.3);
   border-left: 4px solid var(--accent-indigo);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
   margin: 2rem 0;
+  word-break: break-word;
 }
 
 .callout h4 {
   color: #ffffff;
   margin-bottom: 0.5rem;
   font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+}
+
+/* Responsive KaTeX / Math Equations */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
+  max-width: 100%;
+}
+
+.katex {
+  max-width: 100%;
+  font-size: clamp(0.9em, 2.2vw, 1.1em);
+}
+
+/* Responsive Tables & Images */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-content th, .article-content td {
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.6rem, 2.5vw, 1rem);
+  border: 1px solid var(--border-glass);
+  text-align: left;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Footer */
 .article-footer {
-  margin-top: 4rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
   padding-top: 2rem;
   border-top: 1px solid var(--border-glass);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .article-tags {
@@ -224,15 +284,27 @@ pre {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.8rem);
   color: var(--text-muted);
 }
 
+/* Media Queries for Fine-Tuning */
 @media (max-width: 768px) {
   .article-container {
     padding: 2rem 1.5rem;
   }
-  .article-title {
-    font-size: 1.8rem;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem 0.25rem;
+  }
+  .article-container {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+  .article-footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
