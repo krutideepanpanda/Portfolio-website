@@ -8,9 +8,9 @@
 :root {
   /* Colors - Semiconductor Dark Theme */
   --bg-dark: #050811;
-  --bg-card: rgba(15, 23, 42, 0.65);
-  --bg-card-hover: rgba(22, 32, 58, 0.85);
-  --bg-glass: rgba(15, 23, 42, 0.4);
+  --bg-card: #0e1626;
+  --bg-card-hover: #152038;
+  --bg-glass: rgba(14, 22, 38, 0.95);
   
   /* Neon & Glowing Accents */
   --neon-cyan: #00f0ff;
@@ -20,9 +20,9 @@
   --neon-amber: #f59e0b;
 
   /* Text & Typography */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #cbd5e1;
   --text-code: #38bdf8;
 
   /* Borders & Shadows */
@@ -1419,3 +1419,80 @@ footer span {
   padding: 0 0 6rem 0 !important;
   min-height: 60vh;
 }
+
+/* High-Contrast, Crystal-Clear Hub Cards for Homepage */
+.hub-card {
+  background: #0c1222 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.hub-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-accent, var(--accent-cyan));
+}
+
+.hub-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--card-accent, var(--accent-cyan));
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+.hub-card .hub-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--card-accent, var(--accent-cyan));
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hub-card .hub-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.hub-card .hub-desc {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: #e2e8f0;
+  font-weight: 400;
+}
+
+.hub-card .hub-action {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--card-accent, var(--accent-cyan));
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: gap 0.3s ease;
+}
+
+.hub-card:hover .hub-action {
+  gap: 1rem;
+}
+
