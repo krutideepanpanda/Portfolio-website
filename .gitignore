@@ -1,7 +1,18 @@
-# AI settings
+# AI settings & local configuration
 .gemini/
+.claude/
 .codex/
+.cursor/
+.anthropic/
+.claudeignore
+.codexignore
+.aiignore
+.cursorignore
+.cursorrules
+CLAUDE.md
+CODEX.md
 scratch/
+*.log
 
 # OS generated files
 Thumbs.db
@@ -11,5 +22,6 @@ desktop.ini
 # Node / Dependencies (if added later)
 node_modules/
 .env
+.env.*
 dist/
 build/
