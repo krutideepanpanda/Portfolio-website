@@ -1,30 +1,29 @@
 /* ==========================================================================
-   KRUTI DEEPAN PANDA — MASTER PORTAL NEXUS (INTERACTIVE SCRIPT)
-   Dynamic Matrix / VLSI Interconnect Canvas & UI Animations
+   ANTIGRAVITY SHOWCASE HOMEPAGE (ROOT SCRIPT)
+   Gravity-Defying Floating Particle Field & Mouse Interactive Effects
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNexusCanvas();
-  initCardInteractions();
+  initAntigravityCanvas();
+  initCard3D();
 });
 
 /* --------------------------------------------------------------------------
-   1. Interactive VLSI / Neural Interconnect Canvas
+   1. Gravity-Defying Floating Particle Field
    -------------------------------------------------------------------------- */
-function initNexusCanvas() {
-  const canvas = document.getElementById('nexus-canvas');
+function initAntigravityCanvas() {
+  const canvas = document.getElementById('antigravity-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
   let width, height;
   let particles = [];
-  const particleCount = Math.min(window.innerWidth / 15, 80);
-  
-  // Mouse tracking for interactive repulsion/attraction
+  const particleCount = Math.min(window.innerWidth / 12, 100);
+
   const mouse = {
     x: null,
     y: null,
-    radius: 160
+    radius: 180
   };
 
   window.addEventListener('mousemove', (e) => {
@@ -41,44 +40,57 @@ function initNexusCanvas() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
   }
-  
+
   window.addEventListener('resize', resize);
   resize();
 
-  class NodeParticle {
+  class FloatingOrbs {
     constructor() {
+      this.reset(true);
+    }
+
+    reset(initial = false) {
       this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.8;
-      this.vy = (Math.random() - 0.5) * 0.8;
-      this.size = Math.random() * 2.2 + 1;
-      this.baseColor = Math.random() > 0.4 ? 'rgba(0, 242, 254, ' : 'rgba(99, 102, 241, ';
-      this.alpha = Math.random() * 0.6 + 0.2;
+      this.y = initial ? Math.random() * height : height + 20;
+      this.size = Math.random() * 3 + 1;
+      // Upward velocity (defying gravity!)
+      this.vy = -(Math.random() * 0.7 + 0.3);
+      this.vx = (Math.random() - 0.5) * 0.4;
+      
+      const colors = [
+        'rgba(0, 242, 254, ',   // cyan
+        'rgba(255, 42, 133, ',  // pink
+        'rgba(138, 43, 226, ',  // purple
+        'rgba(255, 255, 255, '  // white
+      ];
+      this.baseColor = colors[Math.floor(Math.random() * colors.length)];
+      this.alpha = Math.random() * 0.7 + 0.2;
     }
 
     update() {
-      this.x += this.vx;
       this.y += this.vy;
+      this.x += this.vx;
 
-      // Bounce off screen edges
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
+      // Slight horizontal oscillation
+      this.x += Math.sin(this.y * 0.01) * 0.2;
 
-      // Mouse interactive push/pull effect
+      // Wrap around when floating off top
+      if (this.y < -20) {
+        this.reset();
+      }
+      if (this.x < 0) this.x = width;
+      if (this.x > width) this.x = 0;
+
+      // Mouse repulsion / swirling effect
       if (mouse.x != null && mouse.y != null) {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
         if (distance < mouse.radius) {
-          const forceDirectionX = dx / distance;
-          const forceDirectionY = dy / distance;
           const force = (mouse.radius - distance) / mouse.radius;
-          const directionX = forceDirectionX * force * 3;
-          const directionY = forceDirectionY * force * 3;
-          
-          this.x -= directionX;
-          this.y -= directionY;
+          this.x -= (dx / distance) * force * 4;
+          this.y -= (dy / distance) * force * 4;
         }
       }
     }
@@ -87,70 +99,55 @@ function initNexusCanvas() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = this.baseColor + this.alpha + ')';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = this.baseColor + '0.8)';
       ctx.fill();
+      ctx.shadowBlur = 0;
     }
   }
 
-  function initParticles() {
+  function init() {
     particles = [];
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new NodeParticle());
+      particles.push(new FloatingOrbs());
     }
   }
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
-
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
       particles[i].draw();
-
-      // Connect adjacent nodes with glowing circuit traces
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 140) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(0, 242, 254, ${0.25 * (1 - dist / 140)})`;
-          ctx.lineWidth = 0.8;
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
     }
     requestAnimationFrame(animate);
   }
 
-  initParticles();
+  init();
   animate();
 }
 
 /* --------------------------------------------------------------------------
-   2. 3D Card Tilt & Hover Enhancements
+   2. Gentle 3D Tilt Effect on Showcase Card
    -------------------------------------------------------------------------- */
-function initCardInteractions() {
-  const cards = document.querySelectorAll('.gateway-card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -5;
-      const rotateY = ((x - centerX) / centerX) * 5;
-      
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-    });
+function initCard3D() {
+  const card = document.querySelector('.creation-card');
+  if (!card) return;
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -4;
+    const rotateY = ((x - centerX) / centerX) * 4;
+
+    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)';
   });
 }
