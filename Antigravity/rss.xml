@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Kruti Deepan Panda | Technical Blog</title>
+  <link>https://krutideepanpanda.com/Antigravity/blog.html</link>
+  <description>Technical articles and lab notes on Analog CAD Automation, ML circuit generation, RISC-V OpenLane tapeouts, and EDA toolchains by Kruti Deepan Panda.</description>
+  <language>en-us</language>
+  <lastBuildDate>Mon, 27 Jul 2026 12:00:00 GMT</lastBuildDate>
+  <atom:link href="https://krutideepanpanda.com/Antigravity/rss.xml" rel="self" type="application/rss+xml" />
+  
+  <item>
+    <title>Accelerating Analog CAD Workflows with Graph Neural Networks</title>
+    <link>https://krutideepanpanda.com/Antigravity/article.html?id=ml-cad-automation</link>
+    <guid isPermaLink="true">https://krutideepanpanda.com/Antigravity/article.html?id=ml-cad-automation</guid>
+    <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+    <category>ML in VLSI</category>
+    <description>Exploring how Graph Neural Networks (GNNs) can predict parasitic capacitance and automate sizing in high-speed CMOS analog layouts before post-layout SPICE simulation.</description>
+  </item>
+  
+  <item>
+    <title>Lessons from 10+ ASIC Tapeouts: OpenLane &amp; SkyWater 130nm</title>
+    <link>https://krutideepanpanda.com/Antigravity/article.html?id=riscv-openlane-tapeouts</link>
+    <guid isPermaLink="true">https://krutideepanpanda.com/Antigravity/article.html?id=riscv-openlane-tapeouts</guid>
+    <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
+    <category>Silicon Design</category>
+    <description>A comprehensive retrospective on physical design challenges, IR-drop debugging with Ansys RedHawk, and open-source EDA toolchains across 10 successful silicon tapeouts.</description>
+  </item>
+</channel>
+</rss>

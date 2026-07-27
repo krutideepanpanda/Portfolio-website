@@ -405,7 +405,8 @@ async function initBlogLoader() {
   const blogNavMenu = document.getElementById('blog-nav-menu');
   if (blogNavMenu) {
     blogNavMenu.innerHTML = `
-      <li><a href="#blog" class="dropdown-item"><i class="fa-solid fa-layer-group" style="margin-right: 0.6rem; color: var(--accent-cyan);"></i>All Blog Articles (#blog)</a></li>
+      <li><a href="blog.html" class="dropdown-item"><i class="fa-solid fa-layer-group" style="margin-right: 0.6rem; color: var(--accent-cyan);"></i>All Blog Articles</a></li>
+      <li><a href="rss.xml" target="_blank" class="dropdown-item"><i class="fa-solid fa-rss" style="margin-right: 0.6rem; color: #f97316;"></i>Subscribe via RSS</a></li>
     `;
     posts.forEach((post) => {
       const li = document.createElement('li');

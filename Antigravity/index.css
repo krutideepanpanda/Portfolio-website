@@ -1580,4 +1580,31 @@ footer span {
   gap: 1rem;
 }
 
+/* ==========================================================================
+   RSS Subscribe Button
+   ========================================================================== */
+.rss-subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.5rem;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  border-radius: 999px;
+  color: #f97316;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.15);
+}
+
+.rss-subscribe-btn:hover {
+  background: rgba(249, 115, 22, 0.3);
+  border-color: #f97316;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+  color: #ffffff;
+}
+
 
