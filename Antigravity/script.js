@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initProjectFilters();
   initCardTilt();
+  initBlogLoader();
 });
 
 /* ==========================================================================
@@ -312,3 +313,72 @@ function initCardTilt() {
     });
   });
 }
+
+/* ==========================================================================
+   6. Dynamic Blog Loader (Picks up posts from D:\Deepan\Portfolio website\Blog)
+   ========================================================================== */
+async function initBlogLoader() {
+  const blogGrid = document.getElementById('blog-grid');
+  if (!blogGrid) return;
+
+  // Try fetching from relative path first, then absolute root path
+  const pathsToTry = ['../Blog/posts.json', '/Blog/posts.json'];
+  let posts = null;
+
+  for (const path of pathsToTry) {
+    try {
+      const response = await fetch(path);
+      if (response.ok) {
+        posts = await response.json();
+        break;
+      }
+    } catch (e) {
+      console.warn(`Could not load blog posts from ${path}:`, e);
+    }
+  }
+
+  if (!posts || !Array.isArray(posts) || posts.length === 0) {
+    blogGrid.innerHTML = `
+      <div class="blog-loading" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.3);">
+        <i class="fa-solid fa-triangle-exclamation"></i> No technical blog posts found in /Blog repository.
+      </div>
+    `;
+    return;
+  }
+
+  // Render Blog Cards
+  blogGrid.innerHTML = '';
+  posts.forEach((post) => {
+    const card = document.createElement('article');
+    card.className = 'blog-card reveal';
+    
+    const tagsHtml = (post.tags || []).map(tag => `<span class="blog-tag">#${tag}</span>`).join('');
+    
+    card.innerHTML = `
+      <div>
+        <div class="blog-top">
+          <span class="blog-category">${post.category || 'VLSI Engineering'}</span>
+          <span><i class="fa-regular fa-clock" style="margin-right: 0.3rem;"></i>${post.readTime || '5 min read'}</span>
+        </div>
+        <h3 class="blog-title">${post.title}</h3>
+        <p class="blog-summary">${post.summary}</p>
+        <div class="blog-tags">${tagsHtml}</div>
+      </div>
+      <div class="blog-footer">
+        <span style="font-size: 0.82rem; color: var(--text-tertiary);"><i class="fa-regular fa-calendar" style="margin-right:0.3rem;"></i>${post.date}</span>
+        <a href="${post.url}" class="blog-btn">
+          <span>Read Article</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    `;
+    
+    blogGrid.appendChild(card);
+  });
+
+  // Re-initialize scroll reveal for new blog cards if reveal observer is active
+  if (typeof initScrollReveal === 'function') {
+    setTimeout(initScrollReveal, 100);
+  }
+}
+
