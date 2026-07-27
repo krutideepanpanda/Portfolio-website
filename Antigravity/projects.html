@@ -56,219 +56,416 @@
   <main class="standalone-section">
     <div class="container reveal active">
       <div class="project-filters" style="margin-bottom: 3.5rem;">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="vlsi">VLSI & ASIC Design</button>
-        <button class="filter-btn" data-filter="fpga">FPGA & Hardware</button>
-        <button class="filter-btn" data-filter="systems">Systems & Embedded</button>
+        <button class="filter-btn active" data-filter="all">All Initiatives</button>
+        <button class="filter-btn" data-filter="vlsi">VLSI & ASIC Automation</button>
+        <button class="filter-btn" data-filter="ai-cad">AI & Agentic CAD</button>
+        <button class="filter-btn" data-filter="systems">Software & Systems</button>
+        <button class="filter-btn" data-filter="academic">University Foundations</button>
       </div>
 
-      <div class="projects-grid">
-        <!-- Project 1: RISC-V OpenLane -->
-        <div class="project-card-wrapper" data-category="vlsi fpga">
-          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div>
-              <div class="project-top">
-                <div class="project-icon"><i class="fa-solid fa-microchip"></i></div>
-                <div class="project-links">
-                  <a href="https://github.com/krutideepanpanda/RISC-V-based-micro-controller-using-OpenLane" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+      <!-- TIER 1: ADVANCED INDUSTRY & AI-ASSISTED INITIATIVES -->
+      <div class="tier-section" data-tier="tier1">
+        <div class="tier-section-header" style="margin-bottom: 2.5rem; border-left: 4px solid var(--accent-cyan); padding-left: 1.25rem;">
+          <h2 style="font-size: 1.8rem; color: #ffffff; font-weight: 800; letter-spacing: -0.01em;">Tier 1: Advanced Industry CAD Automation & AI-Assisted Silicon (2023 – Present)</h2>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.35rem;">Showcasing cutting-edge agentic CAD toolchains, autonomous RISC-V FPGA tapeouts, and full-stack systems engineering.</p>
+        </div>
+
+        <div class="projects-grid" style="margin-bottom: 5rem;">
+          <!-- Card 1: Agentic CAD Automation via Claude Code -->
+          <div class="project-card-wrapper" data-category="vlsi ai-cad">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon" style="background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan);"><i class="fa-solid fa-robot"></i></div>
+                  <div class="project-links">
+                    <span class="info-badge" style="font-size: 0.8rem; padding: 0.3rem 0.8rem; background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); border-radius: 20px;">Industry CAD</span>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.5rem; color: var(--text-primary);">Internal CAD Automation via Claude Code & AI Agents</h3>
+                <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 600;">Silicon Design Engineer Initiative | 2023 – Present</span>
+                <p class="project-desc" style="font-size: 1.08rem; line-height: 1.75; color: var(--text-secondary);">
+                  Architected internal CAD automation workflows leveraging <strong style="color: var(--text-primary);">Claude Code</strong> and autonomous AI agents. Engineered custom agent skills and automation hooks to accelerate analog circuit sizing, formal equivalence verification, and DRC/LVS routing iterations across advanced semiconductor process nodes.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Automation Engine</span>
+                    <span class="metric-val" style="color: var(--accent-cyan);">Claude Code / AI Agents</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Architecture</span>
+                    <span class="metric-val" style="color: var(--accent-cyan);">Custom Skills & Hooks</span>
+                  </div>
                 </div>
               </div>
-              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">RISC-V Microcontroller using OpenLane</h3>
-              <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 500;">Under Prof. Ramesh Kini, NITK | Jan 2022 – Apr 2022</span>
-              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                Configured open-source RISC-V core <strong style="color: var(--text-primary);">PICORV32</strong> with custom co-processors and modified the OpenLane flow for manufacturing GDSII files using <strong style="color: var(--text-primary);">SkyWater 130nm PDK</strong>. Performed extensive design space exploration across area and delay optimization.
-              </p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <span class="metric-label">Max Frequency</span>
-                  <span class="metric-val" style="color: var(--accent-cyan);">250 MHz Clock</span>
-                </div>
-                <div class="metric-item">
-                  <span class="metric-label">Chip Area</span>
-                  <span class="metric-val" style="color: var(--accent-cyan);">0.49 – 0.70 mm²</span>
-                </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Claude Code</span>
+                <span class="tech-tag">AI Agents</span>
+                <span class="tech-tag">Custom Skills</span>
+                <span class="tech-tag">Automation Hooks</span>
+                <span class="tech-tag">Analog CAD</span>
               </div>
             </div>
-            <div class="tech-tags">
-              <span class="tech-tag">Verilog</span>
-              <span class="tech-tag">OpenLane</span>
-              <span class="tech-tag">SkyWater 130nm</span>
-              <span class="tech-tag">RISC-V Core</span>
+          </div>
+
+          <!-- Card 2: Openlane_processor (Gemini 3.1 Pro 64-bit RISC-V) -->
+          <div class="project-card-wrapper" data-category="vlsi ai-cad fpga">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple);"><i class="fa-solid fa-microchip"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda/Openlane_processor" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.5rem; color: var(--text-primary);">Openlane_processor: 64-Bit RISC-V Linux FPGA Tapeout</h3>
+                <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 600;">Autonomous AI ASIC Experiment | 2026</span>
+                <p class="project-desc" style="font-size: 1.08rem; line-height: 1.75; color: var(--text-secondary);">
+                  Pioneering an advanced experiment utilizing <strong style="color: var(--text-primary);">Gemini 3.1 Pro in Google Antigravity</strong> to architect, synthesize, and verify a complete 64-bit RISC-V microprocessor. Designed for FPGA deployment and execution of a full Linux kernel, leveraging automated OpenLane flow generation.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Target Architecture</span>
+                    <span class="metric-val" style="color: var(--accent-purple);">64-Bit RISC-V Core</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">AI Copilot</span>
+                    <span class="metric-val" style="color: var(--accent-purple);">Gemini 3.1 Pro / AGY</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">RISC-V 64-bit</span>
+                <span class="tech-tag">Gemini 3.1 Pro</span>
+                <span class="tech-tag">OpenLane</span>
+                <span class="tech-tag">FPGA Deployment</span>
+                <span class="tech-tag">Linux Kernel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Advanced Mixed-Signal Modeling & Formal LEC -->
+          <div class="project-card-wrapper" data-category="vlsi">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo);"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div class="project-links">
+                    <span class="info-badge" style="font-size: 0.8rem; padding: 0.3rem 0.8rem; background: rgba(99, 102, 241, 0.1); color: var(--accent-indigo); border: 1px solid var(--accent-indigo); border-radius: 20px;">Formal Verification</span>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.5rem; color: var(--text-primary);">System-Level Mixed-Signal Modeling & Formal LEC</h3>
+                <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 600;">Enterprise ASIC Methodologies | 2023 – Present</span>
+                <p class="project-desc" style="font-size: 1.08rem; line-height: 1.75; color: var(--text-secondary);">
+                  Engineered system-level analog and mixed-signal verification environments leveraging <strong style="color: var(--text-primary);">XMODEL and MODELZEN</strong> by Scientific Analog. Executed rigorous equivalence checking and static property verification using <strong style="color: var(--text-primary);">Synopsys ESP</strong> and <strong style="color: var(--text-primary);">Cadence Conformal LEC</strong> across multi-million gate ASIC tapeouts.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Analog Modeling</span>
+                    <span class="metric-val" style="color: var(--accent-indigo);">XMODEL / MODELZEN</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Formal Verification</span>
+                    <span class="metric-val" style="color: var(--accent-indigo);">Synopsys ESP / Conformal</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">XMODEL</span>
+                <span class="tech-tag">MODELZEN</span>
+                <span class="tech-tag">Synopsys ESP</span>
+                <span class="tech-tag">Conformal LEC</span>
+                <span class="tech-tag">Mixed-Signal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: JellyfinOfflineClient -->
+          <div class="project-card-wrapper" data-category="systems ai-cad">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon" style="background: rgba(52, 211, 153, 0.15); color: var(--accent-emerald);"><i class="fa-solid fa-network-wired"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda/JellyfinOfflineClient" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.5rem; color: var(--text-primary);">JellyfinOfflineClient: Smart Offline Media Architecture</h3>
+                <span class="project-subtitle" style="color: var(--accent-emerald); font-weight: 600;">Full-Stack AI Experiment | 2026</span>
+                <p class="project-desc" style="font-size: 1.08rem; line-height: 1.75; color: var(--text-secondary);">
+                  Architected a smart offline client for Jellyfin media servers as part of an experimental autonomous developer workflow using <strong style="color: var(--text-primary);">Gemini 3.1 Pro</strong>. Built with robust client-side media caching, offline synchronization protocols, and responsive UI components.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">System Design</span>
+                    <span class="metric-val" style="color: var(--accent-emerald);">Smart Offline Sync</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Development Flow</span>
+                    <span class="metric-val" style="color: var(--accent-emerald);">Gemini 3.1 Pro Assisted</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Systems Engineering</span>
+                <span class="tech-tag">Client-Side Caching</span>
+                <span class="tech-tag">Gemini 3.1 Pro</span>
+                <span class="tech-tag">Full-Stack</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Hydra_Bot_the_builder -->
+          <div class="project-card-wrapper" data-category="systems">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon" style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber);"><i class="fa-solid fa-terminal"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda/Hydra_Bot_the_builder" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.5rem; color: var(--text-primary);">Hydra_Bot_the_builder: Autonomous Discord Bot</h3>
+                <span class="project-subtitle" style="color: var(--accent-amber); font-weight: 600;">Open-Source Developer Utility | 2024</span>
+                <p class="project-desc" style="font-size: 1.08rem; line-height: 1.75; color: var(--text-secondary);">
+                  Engineered a feature-rich, automated Discord bot designed for community server management, interactive command handling, and custom event workflows. Built with modular event hooks and seamless asynchronous API integrations.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Bot Architecture</span>
+                    <span class="metric-val" style="color: var(--accent-amber);">Modular Event Hooks</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Integration</span>
+                    <span class="metric-val" style="color: var(--accent-amber);">Discord API</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Discord API</span>
+                <span class="tech-tag">Python / Node</span>
+                <span class="tech-tag">Automation Hooks</span>
+                <span class="tech-tag">Systems</span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Project 2: Configurable CNN FPGA -->
-        <div class="project-card-wrapper" data-category="fpga systems">
-          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div>
-              <div class="project-top">
-                <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
-                <div class="project-links">
-                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
-                </div>
-              </div>
-              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Configurable Framework for CNN on Hardware</h3>
-              <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 500;">Under Prof. Sumam David, NITK | Jan 2023 – Apr 2023</span>
-              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                Designed scalable memory architectures to efficiently utilize onboard <strong style="color: var(--text-primary);">FPGA BRAM</strong> to load input parameters of CNNs of any kernel size and stride length. Exploited pixel re-usability during convolution to drastically reduce LUT utilization.
-              </p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <span class="metric-label">Optimization</span>
-                  <span class="metric-val" style="color: var(--accent-indigo);">Low LUT / BRAM</span>
-                </div>
-                <div class="metric-item">
-                  <span class="metric-label">Scalability</span>
-                  <span class="metric-val" style="color: var(--accent-indigo);">Any Kernel / Stride</span>
-                </div>
-              </div>
-            </div>
-            <div class="tech-tags">
-              <span class="tech-tag">FPGA Design</span>
-              <span class="tech-tag">Hardware Accelerator</span>
-              <span class="tech-tag">CNN Architecture</span>
-              <span class="tech-tag">Verilog</span>
-            </div>
-          </div>
+      <!-- TIER 2: UNIVERSITY & RESEARCH FOUNDATIONS -->
+      <div class="tier-section" data-tier="tier2">
+        <div class="tier-section-header" style="margin-top: 4.5rem; margin-bottom: 2.5rem; border-left: 4px solid var(--accent-indigo); padding-left: 1.25rem;">
+          <h2 style="font-size: 1.8rem; color: #ffffff; font-weight: 800; letter-spacing: -0.01em;">Tier 2: University & Research Foundations (NITK 2020 – 2023)</h2>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.35rem;">Undergraduate honors thesis, academic tapeouts, and foundational hardware engineering research at National Institute of Technology Karnataka.</p>
         </div>
 
-        <!-- Project 3: MIT Beta-ISA Pipelined CPU -->
-        <div class="project-card-wrapper" data-category="vlsi systems">
-          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div>
-              <div class="project-top">
-                <div class="project-icon"><i class="fa-solid fa-server"></i></div>
-                <div class="project-links">
-                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+        <div class="projects-grid">
+          <!-- Project 1: RISC-V OpenLane -->
+          <div class="project-card-wrapper" data-category="vlsi fpga academic">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon"><i class="fa-solid fa-microchip"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda/RISC-V-based-micro-controller-using-OpenLane" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">RISC-V Microcontroller using OpenLane</h3>
+                <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 500;">Under Prof. Ramesh Kini, NITK | Jan 2022 – Apr 2022</span>
+                <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                  Configured open-source RISC-V core <strong style="color: var(--text-primary);">PICORV32</strong> with custom co-processors and modified the OpenLane flow for manufacturing GDSII files using <strong style="color: var(--text-primary);">SkyWater 130nm PDK</strong>. Performed extensive design space exploration across area and delay optimization.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Max Frequency</span>
+                    <span class="metric-val" style="color: var(--accent-cyan);">250 MHz Clock</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Chip Area</span>
+                    <span class="metric-val" style="color: var(--accent-cyan);">0.49 – 0.70 mm²</span>
+                  </div>
                 </div>
               </div>
-              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">MIT Beta-ISA Pipelined Microprocessor</h3>
-              <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 500;">Under Prof. MS Bhat, NITK | Jan 2023 – Apr 2023</span>
-              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                Architected a full <strong style="color: var(--text-primary);">5-stage pipelined microprocessor</strong> (Instruction Fetch, Decode, ALU, Memory, Write-Back) based on MIT OCW Beta-ISA. Built a custom GUI-based assembler in Python to translate assembly code to machine code.
-              </p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <span class="metric-label">Architecture</span>
-                  <span class="metric-val" style="color: var(--accent-purple);">5-Stage Pipeline</span>
-                </div>
-                <div class="metric-item">
-                  <span class="metric-label">Toolchain</span>
-                  <span class="metric-val" style="color: var(--accent-purple);">Python GUI Assembler</span>
-                </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Verilog</span>
+                <span class="tech-tag">OpenLane</span>
+                <span class="tech-tag">SkyWater 130nm</span>
+                <span class="tech-tag">RISC-V Core</span>
               </div>
-            </div>
-            <div class="tech-tags">
-              <span class="tech-tag">CPU Architecture</span>
-              <span class="tech-tag">Beta-ISA</span>
-              <span class="tech-tag">Verilog</span>
-              <span class="tech-tag">Python Assembler</span>
             </div>
           </div>
-        </div>
 
-        <!-- Project 4: Security Module with AES -->
-        <div class="project-card-wrapper" data-category="vlsi systems">
-          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div>
-              <div class="project-top">
-                <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="project-links">
-                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+          <!-- Project 2: Configurable CNN FPGA -->
+          <div class="project-card-wrapper" data-category="fpga systems academic">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Configurable Framework for CNN on Hardware</h3>
+                <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 500;">Under Prof. Sumam David, NITK | Jan 2023 – Apr 2023</span>
+                <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                  Designed scalable memory architectures to efficiently utilize onboard <strong style="color: var(--text-primary);">FPGA BRAM</strong> to load input parameters of CNNs of any kernel size and stride length. Exploited pixel re-usability during convolution to drastically reduce LUT utilization.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Optimization</span>
+                    <span class="metric-val" style="color: var(--accent-indigo);">Low LUT / BRAM</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Scalability</span>
+                    <span class="metric-val" style="color: var(--accent-indigo);">Any Kernel / Stride</span>
+                  </div>
                 </div>
               </div>
-              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Security Module for Microprocessor</h3>
-              <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 500;">October 2020 – March 2021</span>
-              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                Designed a 32-bit RISC processor in Verilog with its own ISA. Integrated a <strong style="color: var(--text-primary);">128-bit AES encryption block</strong> to encrypt data/instructions in memory, thwarting hardware probing attacks. Developed a Python assembler that encrypts machine code on the fly.
-              </p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <span class="metric-label">Security Engine</span>
-                  <span class="metric-val" style="color: var(--accent-cyan);">128-bit AES Hardware</span>
-                </div>
-                <div class="metric-item">
-                  <span class="metric-label">Protection</span>
-                  <span class="metric-val" style="color: var(--accent-cyan);">Anti-Probing Memory</span>
-                </div>
+              <div class="tech-tags">
+                <span class="tech-tag">FPGA Design</span>
+                <span class="tech-tag">Hardware Accelerator</span>
+                <span class="tech-tag">CNN Architecture</span>
+                <span class="tech-tag">Verilog</span>
               </div>
-            </div>
-            <div class="tech-tags">
-              <span class="tech-tag">Hardware Security</span>
-              <span class="tech-tag">AES Encryption</span>
-              <span class="tech-tag">32-bit RISC</span>
-              <span class="tech-tag">Verilog</span>
             </div>
           </div>
-        </div>
 
-        <!-- Project 5: 4-bit ALU Magic VLSI -->
-        <div class="project-card-wrapper" data-category="vlsi">
-          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div>
-              <div class="project-top">
-                <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <div class="project-links">
-                  <a href="https://github.com/krutideepanpanda/4-Bit-ALU-using-Magic-VLSI" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+          <!-- Project 3: MIT Beta-ISA Pipelined CPU -->
+          <div class="project-card-wrapper" data-category="vlsi systems academic">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon"><i class="fa-solid fa-server"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">MIT Beta-ISA Pipelined Microprocessor</h3>
+                <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 500;">Under Prof. MS Bhat, NITK | Jan 2023 – Apr 2023</span>
+                <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                  Architected a full <strong style="color: var(--text-primary);">5-stage pipelined microprocessor</strong> (Instruction Fetch, Decode, ALU, Memory, Write-Back) based on MIT OCW Beta-ISA. Built a custom GUI-based assembler in Python to translate assembly code to machine code.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Architecture</span>
+                    <span class="metric-val" style="color: var(--accent-purple);">5-Stage Pipeline</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Toolchain</span>
+                    <span class="metric-val" style="color: var(--accent-purple);">Python GUI Assembler</span>
+                  </div>
                 </div>
               </div>
-              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">4-bit ALU using Magic VLSI</h3>
-              <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 500;">Under Prof. Ramesh Kini, NITK | Nov 2021</span>
-              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                Implemented a 4-bit ALU capable of Addition, AND, and OR operations using <strong style="color: var(--text-primary);">Pharosc vcslib 130nm technology</strong> standard cells. Wrote an automated bash testbench script that generates random test cases and verifies layout outputs.
-              </p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <span class="metric-label">Standard Cells</span>
-                  <span class="metric-val" style="color: var(--accent-indigo);">Pharosc 130nm</span>
-                </div>
-                <div class="metric-item">
-                  <span class="metric-label">Layout Area</span>
-                  <span class="metric-val" style="color: var(--accent-indigo);">169,061 sq. µm</span>
-                </div>
+              <div class="tech-tags">
+                <span class="tech-tag">CPU Architecture</span>
+                <span class="tech-tag">Beta-ISA</span>
+                <span class="tech-tag">Verilog</span>
+                <span class="tech-tag">Python Assembler</span>
               </div>
-            </div>
-            <div class="tech-tags">
-              <span class="tech-tag">Magic VLSI</span>
-              <span class="tech-tag">Custom Layout</span>
-              <span class="tech-tag">Bash Automation</span>
-              <span class="tech-tag">Python</span>
             </div>
           </div>
-        </div>
 
-        <!-- Project 6: Object Detection RPi -->
-        <div class="project-card-wrapper" data-category="systems">
-          <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div>
-              <div class="project-top">
-                <div class="project-icon"><i class="fa-solid fa-camera-retro"></i></div>
-                <div class="project-links">
-                  <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+          <!-- Project 4: Security Module with AES -->
+          <div class="project-card-wrapper" data-category="vlsi systems academic">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Security Module for Microprocessor</h3>
+                <span class="project-subtitle" style="color: var(--accent-cyan); font-weight: 500;">October 2020 – March 2021</span>
+                <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                  Designed a 32-bit RISC processor in Verilog with its own ISA. Integrated a <strong style="color: var(--text-primary);">128-bit AES encryption block</strong> to encrypt data/instructions in memory, thwarting hardware probing attacks. Developed a Python assembler that encrypts machine code on the fly.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Security Engine</span>
+                    <span class="metric-val" style="color: var(--accent-cyan);">128-bit AES Hardware</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Protection</span>
+                    <span class="metric-val" style="color: var(--accent-cyan);">Anti-Probing Memory</span>
+                  </div>
                 </div>
               </div>
-              <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Live Object Detection Using Raspberry Pi</h3>
-              <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 500;">Under Prof. Sumam David, NITK | Jan 2021 – Mar 2021</span>
-              <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                Deployed <strong style="color: var(--text-primary);">MobileNet-SSD V2</strong> object detection model on Raspberry Pi with remote SFTP access. Optimized frame pipeline and downscaled video stream to 480p to achieve real-time live object detection at a steady 15 FPS.
-              </p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <span class="metric-label">Live Performance</span>
-                  <span class="metric-val" style="color: var(--accent-purple);">15 FPS Real-Time</span>
-                </div>
-                <div class="metric-item">
-                  <span class="metric-label">Edge Model</span>
-                  <span class="metric-val" style="color: var(--accent-purple);">MobileNet-SSD V2</span>
-                </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Hardware Security</span>
+                <span class="tech-tag">AES Encryption</span>
+                <span class="tech-tag">32-bit RISC</span>
+                <span class="tech-tag">Verilog</span>
               </div>
             </div>
-            <div class="tech-tags">
-              <span class="tech-tag">Raspberry Pi</span>
-              <span class="tech-tag">Edge AI</span>
-              <span class="tech-tag">Computer Vision</span>
-              <span class="tech-tag">Python</span>
+          </div>
+
+          <!-- Project 5: 4-bit ALU Magic VLSI -->
+          <div class="project-card-wrapper" data-category="vlsi academic">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda/4-Bit-ALU-using-Magic-VLSI" target="_blank" class="project-link-btn" title="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">4-bit ALU using Magic VLSI</h3>
+                <span class="project-subtitle" style="color: var(--accent-indigo); font-weight: 500;">Under Prof. Ramesh Kini, NITK | Nov 2021</span>
+                <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                  Implemented a 4-bit ALU capable of Addition, AND, and OR operations using <strong style="color: var(--text-primary);">Pharosc vcslib 130nm technology</strong> standard cells. Wrote an automated bash testbench script that generates random test cases and verifies layout outputs.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Standard Cells</span>
+                    <span class="metric-val" style="color: var(--accent-indigo);">Pharosc 130nm</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Layout Area</span>
+                    <span class="metric-val" style="color: var(--accent-indigo);">169,061 sq. µm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Magic VLSI</span>
+                <span class="tech-tag">Custom Layout</span>
+                <span class="tech-tag">Bash Automation</span>
+                <span class="tech-tag">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Object Detection RPi -->
+          <div class="project-card-wrapper" data-category="systems academic">
+            <div class="project-card" style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                  <div class="project-links">
+                    <a href="https://github.com/krutideepanpanda" target="_blank" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+                <h3 class="project-title" style="font-size: 1.45rem; color: var(--text-primary);">Live Object Detection Using Raspberry Pi</h3>
+                <span class="project-subtitle" style="color: var(--accent-purple); font-weight: 500;">Under Prof. Sumam David, NITK | Jan 2021 – Mar 2021</span>
+                <p class="project-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+                  Deployed <strong style="color: var(--text-primary);">MobileNet-SSD V2</strong> object detection model on Raspberry Pi with remote SFTP access. Optimized frame pipeline and downscaled video stream to 480p to achieve real-time live object detection at a steady 15 FPS.
+                </p>
+                <div class="project-metrics">
+                  <div class="metric-item">
+                    <span class="metric-label">Live Performance</span>
+                    <span class="metric-val" style="color: var(--accent-purple);">15 FPS Real-Time</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Edge Model</span>
+                    <span class="metric-val" style="color: var(--accent-purple);">MobileNet-SSD V2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Raspberry Pi</span>
+                <span class="tech-tag">Edge AI</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Python</span>
+              </div>
             </div>
           </div>
         </div>

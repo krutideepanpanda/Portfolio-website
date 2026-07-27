@@ -293,6 +293,21 @@ function initProjectFilters() {
           }, 300);
         }
       });
+
+      // Update tier header visibility dynamically based on filter
+      setTimeout(() => {
+        document.querySelectorAll('.tier-section').forEach((section) => {
+          const matchingCards = Array.from(section.querySelectorAll('.project-card-wrapper')).filter((card) => {
+            const cat = card.getAttribute('data-category');
+            return filterValue === 'all' || (cat && cat.includes(filterValue));
+          });
+          const header = section.querySelector('.tier-section-header');
+          if (header) {
+            header.style.display = matchingCards.length > 0 ? 'block' : 'none';
+          }
+          section.style.display = matchingCards.length > 0 ? 'block' : 'none';
+        });
+      }, 310);
     });
   });
 }
