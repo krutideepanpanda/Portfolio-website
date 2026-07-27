@@ -15,17 +15,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadScript('https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js');
   }
 
-  // 2. Fetch the article.md file in the current subfolder
+  // 2. Determine article subfolder ID from URL parameter (?id= or ?post=)
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get('id') || urlParams.get('post') || 'ml-cad-automation';
+
   let mdText = '';
-  try {
-    const res = await fetch('./article.md');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    mdText = await res.text();
-  } catch (err) {
+  const pathsToTry = [`../Blog/${postId}/article.md`, `/Blog/${postId}/article.md`, `./${postId}/article.md`];
+  let loadedPath = '';
+
+  for (const path of pathsToTry) {
+    try {
+      const res = await fetch(path);
+      if (res.ok) {
+        mdText = await res.text();
+        loadedPath = path;
+        break;
+      }
+    } catch (e) {
+      console.warn(`Failed to fetch ${path}`, e);
+    }
+  }
+
+  if (!mdText) {
     contentContainer.innerHTML = `
       <div class="callout" style="border-color: #ef4444; background: rgba(239, 68, 68, 0.1);">
-        <h4 style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Could not load article.md</h4>
-        <p>Error loading Markdown file from current directory: ${err.message}</p>
+        <h4 style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Article Not Found</h4>
+        <p>Could not locate Markdown file for article ID: <strong>${postId}</strong> inside /Blog repository.</p>
+        <p style="margin-top: 1rem;"><a href="index.html#blog" style="color: var(--accent-cyan); text-decoration: underline;">Return to Blog Hub</a></p>
       </div>
     `;
     return;
@@ -61,13 +77,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 4. Fallback to posts.json if metadata is incomplete
   if (!metadata.title || !metadata.date) {
     try {
-      const folderName = window.location.pathname.replace(/\/index\.html$/, '').split('/').filter(Boolean).pop();
-      const postsRes = await fetch('../posts.json');
-      if (postsRes.ok) {
-        const posts = await postsRes.json();
-        const found = posts.find(p => p.url.includes(folderName) || p.id === folderName);
-        if (found) {
-          metadata = { ...found, ...metadata };
+      const postsPaths = ['../Blog/posts.json', '/Blog/posts.json'];
+      for (const pPath of postsPaths) {
+        const postsRes = await fetch(pPath);
+        if (postsRes.ok) {
+          const posts = await postsRes.json();
+          const found = posts.find(p => p.id === postId || (p.url && p.url.includes(postId)));
+          if (found) {
+            metadata = { ...found, ...metadata };
+            break;
+          }
         }
       }
     } catch (e) {
