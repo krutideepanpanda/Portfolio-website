@@ -86,7 +86,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="home" style="min-height: 85vh;">
+  <section class="hero" id="home" style="min-height: 100vh; min-height: 100svh; position: relative;">
     <div class="container hero-content">
       <div class="badge">
         <span class="badge-pulse"></span>
@@ -107,10 +107,17 @@
         </a>
       </div>
     </div>
+
+    <div class="scroll-prompt">
+      <a href="#portfolio-subsections" aria-label="Scroll down to Portfolio Subsections">
+        <span>EXPLORE SUBSECTIONS</span>
+        <i class="fa-solid fa-angles-down"></i>
+      </a>
+    </div>
   </section>
 
   <!-- Standalone Hub Navigation Showcase -->
-  <section style="padding: 2rem 0 6rem 0; position: relative; z-index: 10;">
+  <section id="portfolio-subsections" class="portfolio-subsections-sec" style="min-height: 100vh; min-height: 100svh; padding: 6rem 0; position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; scroll-margin-top: 65px;">
     <div class="container reveal active">
       <div class="section-header" style="margin-bottom: 3rem;">
         <h2 class="section-title"><span class="section-num">//</span> Portfolio Subsections</h2>
