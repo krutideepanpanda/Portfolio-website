@@ -3,78 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kruti Deepan Panda | AI Tools Documentation Experiment</title>
-  <meta name="description" content="Personal experiment and neutral documentation of portfolio website builds using different AI coding tools.">
+  <title>Kruti Deepan Panda | Personal Experiment Bench & AI Evaluation</title>
+  <meta name="description" content="Personal engineering laboratory and documentation by Kruti Deepan Panda evaluating different AI coding assistants through comparative website builds.">
   <link rel="stylesheet" href="index.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <main class="experiment-container">
+  <!-- Ambient Glow Background & Subtle Architectural Grid -->
+  <div class="ambient-background">
+    <div class="ambient-glow glow-warm"></div>
+    <div class="ambient-glow glow-cool"></div>
+  </div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Master Content Wrapper -->
+  <main class="content-wrapper">
     
-    <!-- Neutral Header -->
-    <header class="page-header">
-      <div class="author-title">Kruti Deepan Panda</div>
-      <h1 class="main-heading">AI Coding Tools Documentation & Comparison</h1>
+    <!-- Hero Introduction -->
+    <header class="hero-header">
+      <div class="profile-pill">
+        <i class="fa-solid fa-compass"></i> Engineering Sandbox & Documentation
+      </div>
+      <h1 class="main-title">
+        Hi I am <span>Kruti Deepan Panda</span>
+      </h1>
+      <p class="subtitle">
+        Welcome to my personal experiment bench and software evaluation laboratory.
+      </p>
     </header>
 
-    <!-- Core Experiment Statement -->
-    <section class="experiment-statement">
-      <p>
-        This is an experiment by me to understand and document different AI tools. My goal is to repeat the same project with different AI tools and see how they fare against each other.
+    <!-- Comprehensive Experiment Statement -->
+    <section class="experiment-card">
+      <div class="experiment-title">
+        <i class="fa-solid fa-flask-vial"></i>
+        <span>The Comparative Web Design Experiment</span>
+      </div>
+      <p class="experiment-text">
+        As a Silicon Design Engineer and VLSI Architect, I am deeply fascinated by the rapid evolution of software engineering methodologies and modern automation. This website serves as a personal laboratory and documentation experiment where I explore the practical capabilities of various AI coding assistants. Rather than evaluating these tools in abstract benchmarks, my goal is to repeat the same project with different AI tools and see how they fare against each other. By subjecting each assistant to identical design goals, interactive features, and technical constraints, I aim to observe their differences in real-world code generation, architectural choices, aesthetic refinement, and overall workflow efficiency.
       </p>
     </section>
 
-    <!-- Tool Builds Section -->
+    <!-- Tools Evaluation Section -->
     <section>
-      <h2 class="section-title">Portfolio Project Iterations</h2>
-      
-      <div class="tools-grid">
+      <h2 class="section-heading">
+        <span>Portfolio Project Iterations</span>
+      </h2>
+
+      <div class="tools-list">
         
         <!-- 1. Antigravity -->
-        <article class="tool-card">
+        <article class="tool-item active-build">
           <div>
-            <div class="tool-header">
-              <h3 class="tool-name">Antigravity</h3>
-              <span class="tool-status status-completed">Completed — July 2026</span>
+            <div class="tool-top">
+              <div class="tool-identity">
+                <div class="tool-icon">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="tool-name">Antigravity</h3>
+              </div>
+              <span class="badge badge-success"><i class="fa-solid fa-check-circle"></i> Completed // July 2026</span>
             </div>
-            <p class="tool-description">
-              The initial portfolio project build generated using Google DeepMind's Antigravity assistant. Features an interactive circuit canvas, dark-mode styling, and structured project documentation.
+            <p class="tool-desc" style="margin-top: 1.2rem;">
+              The initial portfolio project build generated using Google DeepMind's Antigravity assistant. Features an interactive circuit canvas, dark-mode styling, and structured project documentation for silicon design engineering.
             </p>
           </div>
           <div class="tool-action">
-            <a href="Antigravity/index.html" class="btn btn-active">View Portfolio (Antigravity) &rarr;</a>
+            <a href="Antigravity/index.html" class="action-btn btn-primary">
+              <span>View Portfolio (Antigravity)</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </article>
 
-        <!-- 2. Codex -->
-        <article class="tool-card">
+        <!-- 2. OpenAI Codex -->
+        <article class="tool-item planned-build">
           <div>
-            <div class="tool-header">
-              <h3 class="tool-name">OpenAI Codex</h3>
-              <span class="tool-status">Planned</span>
+            <div class="tool-top">
+              <div class="tool-identity">
+                <div class="tool-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="tool-name">OpenAI Codex</h3>
+              </div>
+              <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> In Queue</span>
             </div>
-            <p class="tool-description">
-              A planned replication of the portfolio website project utilizing OpenAI Codex to evaluate alternative design and structure choices.
+            <p class="tool-desc" style="margin-top: 1.2rem;">
+              A planned replication of the portfolio website project utilizing OpenAI Codex to evaluate alternative code structure, component modularity, and aesthetic choices.
             </p>
           </div>
           <div class="tool-action">
-            <button class="btn btn-disabled" disabled>Coming Soon</button>
+            <button class="action-btn btn-disabled" disabled>
+              <i class="fa-solid fa-lock" style="margin-right: 0.4rem;"></i> Coming Soon
+            </button>
           </div>
         </article>
 
-        <!-- 3. Claude Code -->
-        <article class="tool-card">
+        <!-- 3. Anthropic Claude Code -->
+        <article class="tool-item planned-build">
           <div>
-            <div class="tool-header">
-              <h3 class="tool-name">Anthropic Claude Code</h3>
-              <span class="tool-status">Planned</span>
+            <div class="tool-top">
+              <div class="tool-identity">
+                <div class="tool-icon">
+                  <i class="fa-solid fa-terminal"></i>
+                </div>
+                <h3 class="tool-name">Anthropic Claude Code</h3>
+              </div>
+              <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> In Queue</span>
             </div>
-            <p class="tool-description">
-              A planned replication of the portfolio website project utilizing Anthropic Claude Code for comparative evaluation.
+            <p class="tool-desc" style="margin-top: 1.2rem;">
+              A planned replication of the portfolio website project utilizing Anthropic Claude Code for comparative evaluation against other agentic systems.
             </p>
           </div>
           <div class="tool-action">
-            <button class="btn btn-disabled" disabled>Coming Soon</button>
+            <button class="action-btn btn-disabled" disabled>
+              <i class="fa-solid fa-lock" style="margin-right: 0.4rem;"></i> Coming Soon
+            </button>
           </div>
         </article>
 
@@ -83,8 +128,9 @@
 
   </main>
 
+  <!-- Footer -->
   <footer class="page-footer">
-    <p>&copy; 2026 Kruti Deepan Panda. Personal documentation and experiment.</p>
+    <p>&copy; 2026 <strong>Kruti Deepan Panda</strong>. Personal software documentation and engineering sandbox.</p>
   </footer>
 
   <script src="script.js"></script>
