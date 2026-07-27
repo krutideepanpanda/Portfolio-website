@@ -15,13 +15,22 @@
   /* Neon & Glowing Accents */
   --neon-cyan: #00f0ff;
   --neon-emerald: #00ff88;
-  --neon-violet: #a855f7;
-  --neon-blue: #3b82f6;
-  --neon-amber: #f59e0b;
+  --neon-violet: #c084fc;
+  --neon-blue: #38bdf8;
+  --neon-amber: #fbbf24;
+
+  /* Accent Colors (Bright, high-contrast luminous colors for dark theme) */
+  --accent-cyan: #00f0ff;
+  --accent-blue: #38bdf8;
+  --accent-indigo: #818cf8;
+  --accent-purple: #c084fc;
+  --accent-amber: #fbbf24;
+  --accent-emerald: #34d399;
+  --accent-rose: #fb7185;
 
   /* Text & Typography */
   --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
+  --text-secondary: #f1f5f9;
   --text-tertiary: #cbd5e1;
   --text-code: #38bdf8;
 
@@ -1422,16 +1431,16 @@ footer span {
 
 /* High-Contrast, Crystal-Clear Hub Cards for Homepage */
 .hub-card {
-  background: #0c1222 !important;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #111b2f !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   position: relative;
   z-index: 20;
   overflow: hidden;
@@ -1448,9 +1457,10 @@ footer span {
 }
 
 .hub-card:hover {
+  background: #17243e !important;
   transform: translateY(-8px);
   border-color: var(--card-accent, var(--accent-cyan));
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 240, 255, 0.25);
 }
 
 .hub-card .hub-tag {
@@ -1459,14 +1469,14 @@ footer span {
   font-weight: 700;
   color: var(--card-accent, var(--accent-cyan));
   letter-spacing: 0.05em;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   padding: 0.4rem 0.85rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hub-card .hub-title {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #ffffff;
   margin-top: 1.25rem;
@@ -1475,15 +1485,15 @@ footer span {
 }
 
 .hub-card .hub-desc {
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   line-height: 1.75;
-  color: #e2e8f0;
+  color: #f1f5f9;
   font-weight: 400;
 }
 
 .hub-card .hub-action {
-  margin-top: 2rem;
-  font-size: 1.05rem;
+  margin-top: 2.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--card-accent, var(--accent-cyan));
   display: flex;
@@ -1495,4 +1505,5 @@ footer span {
 .hub-card:hover .hub-action {
   gap: 1rem;
 }
+
 
