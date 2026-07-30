@@ -1337,6 +1337,207 @@ footer span {
 }
 
 /* ==========================================================================
+   FLUID UI COMPONENTS (Refactored from inline styles)
+   ========================================================================== */
+.info-card {
+  max-width: 1050px;
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem) auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color, rgba(255,255,255,0.1));
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.top-bar-cyan-indigo {
+  position: absolute; top: 0; left: 0; width: 100%; height: 4px; 
+  background: linear-gradient(90deg, var(--neon-cyan), var(--accent-indigo));
+}
+.top-bar-emerald-amber {
+  position: absolute; top: 0; left: 0; width: 100%; height: 4px; 
+  background: linear-gradient(90deg, var(--neon-emerald), var(--neon-amber));
+}
+
+.info-card-header {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.info-part-label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+.label-cyan { color: var(--neon-cyan); }
+.label-emerald { color: var(--neon-emerald); }
+
+.info-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.info-sub {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  margin-top: 0.5rem;
+}
+.sub-cyan { color: var(--accent-cyan); }
+.sub-emerald { color: var(--neon-emerald); }
+
+.info-badge {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  padding: 0.6rem 1.3rem;
+  border-radius: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge-cyan {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+}
+.badge-emerald {
+  background: rgba(0, 255, 136, 0.15);
+  color: var(--neon-emerald);
+  border: 1px solid var(--neon-emerald);
+}
+
+.info-body {
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.info-body p { margin: 0; }
+.info-body strong { color: var(--text-primary); }
+
+.highlight-box {
+  background: rgba(0, 240, 255, 0.04);
+  border-left: 4px solid var(--neon-cyan);
+  padding: clamp(1.2rem, 3vw, 1.5rem);
+  border-radius: 0 8px 8px 0;
+  margin: 0.5rem 0;
+}
+.highlight-box h4 {
+  color: #ffffff;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.highlight-box p {
+  margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: var(--text-secondary);
+}
+
+.academic-box {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.academic-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.academic-title {
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+  color: var(--text-primary);
+  margin: 0;
+}
+.academic-sub {
+  color: var(--accent-indigo);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  margin-top: 0.3rem;
+}
+.academic-badge {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent-indigo);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  font-weight: 600;
+}
+.academic-desc {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.hobby-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.hobby-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-5px);
+}
+.hobby-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+.hobby-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.hobby-icon.amber { background: rgba(251, 191, 36, 0.15); color: var(--neon-amber); }
+.hobby-icon.cyan { background: rgba(0, 240, 255, 0.15); color: var(--neon-cyan); }
+.hobby-icon.purple { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); }
+.hobby-icon.pink { background: rgba(236, 72, 153, 0.15); color: var(--neon-pink, #ec4899); }
+.hobby-title {
+  font-size: clamp(1.15rem, 3vw, 1.3rem);
+  color: #ffffff;
+  margin: 0;
+}
+.hobby-desc {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
    06 // BLOG SECTION STYLES (Dynamically Loaded)
    ========================================================================== */
 #blog {
