@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilters();
   initCardTilt();
   initBlogLoader();
+  initPIIDecoder();
 });
 
 /* ==========================================================================
@@ -421,3 +422,38 @@ async function initBlogLoader() {
   }
 }
 
+/* ==========================================================================
+   9. PII Obfuscation Decoder (Security)
+   ========================================================================== */
+function initPIIDecoder() {
+  const emailB64 = "a3J1dGlkZWVwYW4xMjNAZ21haWwuY29t"; // Base64 for [OBFUSCATED_EMAIL]
+  const phoneB64 = "KzkxNzAyMjIwNjIwMw==";             // Base64 for [OBFUSCATED_PHONE]
+  
+  let email = "";
+  let phone = "";
+  try {
+    email = atob(emailB64);
+    phone = atob(phoneB64);
+  } catch (e) {
+    return; // graceful failure
+  }
+
+  // Obfuscate Email Links & Text
+  document.querySelectorAll('.obf-email').forEach(el => {
+    if (el.tagName === 'A') el.href = `mailto:${email}`;
+  });
+  document.querySelectorAll('.obf-email-btn').forEach(el => {
+    if (el.tagName === 'A') el.href = `mailto:${email}?subject=Opportunity%20/%20Inquiry%20via%20Portfolio`;
+  });
+  document.querySelectorAll('.obf-email-text').forEach(el => {
+    el.textContent = email;
+  });
+
+  // Obfuscate Phone Links & Text
+  document.querySelectorAll('.obf-phone').forEach(el => {
+    if (el.tagName === 'A') el.href = `tel:${phone}`;
+  });
+  document.querySelectorAll('.obf-phone-text').forEach(el => {
+    el.textContent = `(+91) ${phone.substring(3)}`;
+  });
+}
