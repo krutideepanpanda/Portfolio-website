@@ -408,17 +408,27 @@ body {
 /* Responsive Layout */
 @media (max-width: 768px) {
   body {
-    padding: 2.5rem 1.2rem;
+    padding: 1.5rem 1rem;
   }
   
   .tool-item, .experiment-card {
-    padding: 1.8rem 1.5rem;
+    padding: 1.2rem 1.2rem;
   }
   
   .main-title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
-  
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.3rem;
+  }
+
   .tool-top {
     flex-direction: column;
     align-items: flex-start;
