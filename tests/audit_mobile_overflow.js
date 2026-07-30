@@ -30,7 +30,10 @@ async function auditMobileOverflow() {
   const htmlFiles = getHtmlFiles(ROOT_DIR);
   console.log(`Starting Mobile Overflow Audit on ${htmlFiles.length} HTML files...`);
 
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const browser = await puppeteer.launch({ 
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   let hasFailures = false;
 
   for (const file of htmlFiles) {
