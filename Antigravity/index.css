@@ -115,8 +115,8 @@ body {
 
 .ambient-glow {
   position: fixed;
-  width: 600px;
-  height: 600px;
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
   border-radius: 50%;
   filter: blur(140px);
   z-index: 0;
@@ -307,6 +307,7 @@ section {
   border-radius: 12px;
   padding: 0.8rem 0;
   min-width: 290px;
+  max-width: 90vw;
   list-style: none;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75), 0 0 20px rgba(0, 242, 254, 0.15);
   opacity: 0;

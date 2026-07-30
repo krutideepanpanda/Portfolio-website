@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Welcome to my personal portfolio website repository.",
+  "main": "script.js",
+  "scripts": {
+    "test:mobile": "node tests/audit_mobile_overflow.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krutideepanpanda/Portfolio-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/krutideepanpanda/Portfolio-website/issues"
+  },
+  "homepage": "https://github.com/krutideepanpanda/Portfolio-website#readme",
+  "devDependencies": {
+    "puppeteer": "^25.4.0"
+  }
+}
