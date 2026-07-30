@@ -716,7 +716,7 @@ section {
   background: rgba(0, 240, 255, 0.1);
   color: var(--neon-cyan);
   border: 1px solid rgba(0, 240, 255, 0.2);
-  white-space: nowrap;
+  line-height: 1.4;
 }
 
 .timeline-item.current .timeline-date {
@@ -1400,7 +1400,7 @@ footer span {
   padding: 0.6rem 1.3rem;
   border-radius: 30px;
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1.4;
 }
 .badge-cyan {
   background: rgba(0, 240, 255, 0.15);
