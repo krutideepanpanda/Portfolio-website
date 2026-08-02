@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kruti Deepan Panda - Technical Blog</title>
+    <link>https://krutideepanpanda.com/Antigravity/blog.html</link>
+    <description>Insights on VLSI, CAD Automation, and Advanced Semiconductor Engineering by Kruti Deepan Panda</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://krutideepanpanda.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Automating Analog CAD Workflows with Python &amp; TCL Hooks</title>
+      <link>https://krutideepanpanda.com/Antigravity/article.html?id=ml-cad-automation</link>
+      <guid>https://krutideepanpanda.com/Antigravity/article.html?id=ml-cad-automation</guid>
+      <pubDate>Mon, 01 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Exploring methods to accelerate analog circuit sizing and formal verification iterations using custom TCL scripts and automated EDA workflows.</description>
+    </item>
+
+    <item>
+      <title>Lessons from 10+ ASIC Tapeouts</title>
+      <link>https://krutideepanpanda.com/Antigravity/article.html?id=riscv-openlane-tapeouts</link>
+      <guid>https://krutideepanpanda.com/Antigravity/article.html?id=riscv-openlane-tapeouts</guid>
+      <pubDate>Fri, 15 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Key insights learned from executing multi-million gate ASIC tapeouts on advanced nodes, discussing OpenLane, RISC-V integration, and physical design challenges.</description>
+    </item>
+  </channel>
+</rss>
