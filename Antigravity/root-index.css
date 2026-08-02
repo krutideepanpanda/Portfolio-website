@@ -39,6 +39,19 @@
   box-sizing: border-box;
 }
 
+/* Keyboard Focus Indicators (Accessibility) */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 body {
   background-color: var(--bg-page);
   color: var(--text-primary);
@@ -435,4 +448,34 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Auto-extracted inline styles */
+
+.div-ext-1 {
+    display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;
+}
+
+.action-btn-ext-2 {
+    font-size: 0.95rem; padding: 0.6rem 1rem;
+}
+
+.fa-solid-ext-3 {
+    margin-right: 0.5rem;
+}
+
+.action-btn-ext-4 {
+    font-size: 0.95rem; padding: 0.6rem 1rem; cursor: not-allowed;
+}
+
+.fa-solid-ext-5 {
+    margin-right: 0.5rem; opacity: 0.5;
+}
+
+.tool-desc-ext-6 {
+    margin-top: 1.2rem;
+}
+
+.fa-solid-ext-7 {
+    margin-right: 0.4rem;
 }

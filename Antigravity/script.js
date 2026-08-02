@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardTilt();
   initBlogLoader();
   initPIIDecoder();
+  initGitHubRepos();
 });
 
 /* ==========================================================================
@@ -32,7 +33,11 @@ function initCircuitCanvas() {
     createNodes();
   }
 
-  window.addEventListener('resize', resize);
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    if (resizeTimeout) cancelAnimationFrame(resizeTimeout);
+    resizeTimeout = requestAnimationFrame(resize);
+  });
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -196,6 +201,7 @@ function initNavigation() {
   const navItems = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
+    if (!navbar) return;
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
@@ -280,7 +286,7 @@ function initProjectFilters() {
 
       projectCards.forEach((card) => {
         const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category.includes(filterValue)) {
+        if (filterValue === 'all' || (category && category.includes(filterValue))) {
           card.style.display = 'block';
           setTimeout(() => {
             card.style.opacity = '1';
@@ -314,30 +320,10 @@ function initProjectFilters() {
 }
 
 /* ==========================================================================
-   5. Subtle 3D Card Tilt Effect on Hover
+   5. Card Tilt Effect - DISABLED (interfered with text selection/copy)
    ========================================================================== */
 function initCardTilt() {
-  const cards = document.querySelectorAll('.project-card, .timeline-card, .skill-category');
-
-  cards.forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -5; // max 5 deg
-      const rotateY = ((x - centerX) / centerX) * 5;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-5px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-    });
-  });
+  // Intentionally disabled: the 3D tilt made it difficult to select and copy text.
 }
 
 /* ==========================================================================
@@ -455,5 +441,147 @@ function initPIIDecoder() {
   });
   document.querySelectorAll('.obf-phone-text').forEach(el => {
     el.textContent = `(+91) ${phone.substring(3)}`;
+  });
+}
+
+/* ==========================================================================
+   10. Live GitHub Repository Fetcher (24-hour localStorage Cache)
+   ========================================================================== */
+const GITHUB_USERNAME = 'krutideepanpanda';
+const GITHUB_CACHE_KEY = 'kdp_github_repos';
+const GITHUB_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in ms
+
+// GitHub language colors (subset covering common languages)
+const LANG_COLORS = {
+  'JavaScript': '#f1e05a', 'TypeScript': '#3178c6', 'Python': '#3572A5',
+  'Verilog': '#b2b7f8', 'SystemVerilog': '#dae1c2', 'C': '#555555',
+  'C++': '#f34b7d', 'HTML': '#e34c26', 'CSS': '#563d7c',
+  'Shell': '#89e051', 'Jupyter Notebook': '#DA5B0B', 'Tcl': '#e4cc98',
+  'Makefile': '#427819', 'Rust': '#dea584', 'Go': '#00ADD8',
+  'Java': '#b07219', 'VHDL': '#adb2cb', 'Scala': '#c22d40'
+};
+
+async function initGitHubRepos() {
+  const grid = document.getElementById('github-repo-grid');
+  if (!grid) return;
+
+  let repos = null;
+
+  // 1. Check localStorage cache
+  try {
+    const cached = localStorage.getItem(GITHUB_CACHE_KEY);
+    if (cached) {
+      const { data, timestamp } = JSON.parse(cached);
+      if (Date.now() - timestamp < GITHUB_CACHE_TTL) {
+        repos = data;
+      }
+    }
+  } catch (e) {
+    console.warn('GitHub cache read error:', e);
+  }
+
+  // 2. Fetch from API if cache is stale or missing
+  if (!repos) {
+    try {
+      const res = await fetch(
+        `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&direction=desc&per_page=30`
+      );
+      if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+      const allRepos = await res.json();
+
+      // Guard against non-array responses (e.g. rate-limit error objects)
+      if (!Array.isArray(allRepos)) throw new Error('GitHub API returned non-array response');
+
+      // Filter: only source repos (not forks), take top 6
+      repos = allRepos
+        .filter(r => !r.fork)
+        .slice(0, 6);
+
+      // Cache the result
+      try {
+        localStorage.setItem(GITHUB_CACHE_KEY, JSON.stringify({
+          data: repos,
+          timestamp: Date.now()
+        }));
+      } catch (e) {
+        console.warn('GitHub cache write error:', e);
+      }
+    } catch (err) {
+      console.error('GitHub API fetch error:', err);
+      grid.innerHTML = `
+        <div class="github-error">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Could not load GitHub repositories. The feed will refresh automatically on your next visit.
+        </div>
+      `;
+      return;
+    }
+  }
+
+  // 3. Render repo cards
+  grid.innerHTML = '';
+
+  if (!repos || repos.length === 0) {
+    grid.innerHTML = `
+      <div class="github-error">
+        <i class="fa-solid fa-inbox"></i>
+        No public repositories found.
+      </div>
+    `;
+    return;
+  }
+
+  repos.forEach(repo => {
+    const card = document.createElement('div');
+    card.className = 'github-repo-card';
+
+    const langColor = LANG_COLORS[repo.language] || '#8b949e';
+    const updatedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
+      year: 'numeric', month: 'short', day: 'numeric'
+    });
+
+    // Build topics HTML
+    const topicsHtml = (repo.topics || []).slice(0, 4)
+      .map(t => `<span class="github-topic-tag">${t}</span>`)
+      .join('');
+
+    card.innerHTML = `
+      <div>
+        <div class="github-repo-header">
+          <div class="github-repo-icon">
+            <i class="fa-solid fa-code-branch"></i>
+          </div>
+          <a href="${repo.html_url}" target="_blank" class="github-repo-link" title="View on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <h3 class="github-repo-name">
+          <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+        </h3>
+        <p class="github-repo-desc">${repo.description || 'No description provided.'}</p>
+      </div>
+      <div>
+        <div class="github-repo-stats">
+          ${repo.language ? `
+            <span class="github-stat">
+              <span class="github-lang-dot" style="background: ${langColor};"></span>
+              ${repo.language}
+            </span>
+          ` : ''}
+          <span class="github-stat">
+            <i class="fa-regular fa-star" style="color: #fbbf24;"></i> ${repo.stargazers_count}
+          </span>
+          <span class="github-stat">
+            <i class="fa-solid fa-code-fork" style="color: #818cf8;"></i> ${repo.forks_count}
+          </span>
+          <span class="github-stat">
+            <i class="fa-regular fa-clock"></i> ${updatedDate}
+          </span>
+        </div>
+        ${topicsHtml ? `<div class="github-repo-footer">${topicsHtml}</div>` : ''}
+      </div>
+    `;
+
+    grid.appendChild(card);
   });
 }

@@ -18,7 +18,7 @@ function initArchitecturalCanvas() {
 
   let width, height;
   let nodes = [];
-  const nodeCount = Math.min(window.innerWidth / 20, 50);
+  let nodeCount = Math.min(window.innerWidth / 20, 50);
 
   const mouse = {
     x: null,
@@ -39,10 +39,18 @@ function initArchitecturalCanvas() {
   function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    nodeCount = Math.min(window.innerWidth / 20, 50);
+    if (typeof init === 'function') init();
   }
 
-  window.addEventListener('resize', resize);
-  resize();
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    if (resizeTimeout) cancelAnimationFrame(resizeTimeout);
+    resizeTimeout = requestAnimationFrame(resize);
+  });
+  
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
 
   class GeoNode {
     constructor() {
@@ -142,6 +150,9 @@ function initArchitecturalCanvas() {
    2. Card Staggered Entry Transitions
    -------------------------------------------------------------------------- */
 function initCardAnimations() {
+  // Respect system accessibility setting
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const elements = document.querySelectorAll('.tool-item, .experiment-card');
   elements.forEach((el, index) => {
     el.style.opacity = '0';
