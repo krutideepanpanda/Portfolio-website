@@ -127,7 +127,7 @@ body {
 .content-wrapper {
   position: relative;
   z-index: 10;
-  max-width: 860px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   flex: 1;
@@ -406,7 +406,7 @@ body {
 
 /* Footer Section */
 .page-footer {
-  max-width: 860px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   border-top: 1px solid var(--border-light);
