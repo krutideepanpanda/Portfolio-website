@@ -835,9 +835,18 @@ section {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2.5rem;
+}
+
+.project-card-wrapper {
+  flex: 1 1 350px;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card {
@@ -1366,7 +1375,7 @@ footer span {
    FLUID UI COMPONENTS (Refactored from inline styles)
    ========================================================================== */
 .info-card {
-  max-width: 1050px;
+  max-width: 1250px;
   margin: 0 auto clamp(2rem, 5vw, 3.5rem) auto;
   padding: clamp(1.5rem, 5vw, 3.5rem);
   background: var(--bg-card);
