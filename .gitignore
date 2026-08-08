@@ -26,3 +26,8 @@ node_modules/
 dist/
 build/
 tests/failures/
+
+# Internal Tooling & AI Configurations
+Blog/EDITOR_ANTIGRAVITY/
+agents/
+scripts/security/
