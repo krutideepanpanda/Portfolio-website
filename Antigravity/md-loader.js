@@ -17,7 +17,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 2. Determine article subfolder ID from URL parameter (?id= or ?post=)
   const urlParams = new URLSearchParams(window.location.search);
-  const postId = urlParams.get('id') || urlParams.get('post') || 'ml-cad-automation';
+  const rawPostId = urlParams.get('id') || urlParams.get('post') || 'ml-cad-automation';
+  
+  // Security fix: Sanitize postId against Path Traversal and DOM XSS
+  // Allow only alphanumeric characters, hyphens, and underscores.
+  const postId = rawPostId.replace(/[^a-zA-Z0-9-_]/g, '');
 
   let mdText = '';
   const pathsToTry = [
