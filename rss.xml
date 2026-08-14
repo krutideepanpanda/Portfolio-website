@@ -5,8 +5,17 @@
   <link>https://krutideepanpanda.com/Antigravity/blog.html</link>
   <description>Technical articles and lab notes on Analog CAD Automation, ML circuit generation, RISC-V OpenLane tapeouts, and EDA toolchains by Kruti Deepan Panda.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 27 Jul 2026 12:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 14 Aug 2026 12:00:00 GMT</lastBuildDate>
   <atom:link href="https://krutideepanpanda.com/rss.xml" rel="self" type="application/rss+xml" />
+  
+  <item>
+    <title>Google Antigravity - Initial impressions</title>
+    <link>https://krutideepanpanda.com/Antigravity/article.html?id=google-antigravity-initial-impressions</link>
+    <guid isPermaLink="true">https://krutideepanpanda.com/Antigravity/article.html?id=google-antigravity-initial-impressions</guid>
+    <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+    <category>AI Exploration</category>
+    <description>Initial hands-on impressions evaluating Google Antigravity and Gemini AI Pro for software engineering workflows, client app development, and hardware design.</description>
+  </item>
   
   <item>
     <title>Accelerating Analog CAD Workflows with Graph Neural Networks</title>

@@ -1,5 +1,24 @@
 [
   {
+    "id": "google-antigravity-initial-impressions",
+    "title": "Google Antigravity - Initial impressions",
+    "date": "August 14, 2026",
+    "readTime": "5 min read",
+    "category": "AI Exploration",
+    "summary": "Initial hands-on impressions evaluating Google Antigravity and Gemini AI Pro for software engineering workflows, client app development, and hardware design.",
+    "url": "article.html?id=google-antigravity-initial-impressions",
+    "tags": [
+      "Antigravity",
+      "AI Exploration",
+      "Gemini",
+      "Evaluation"
+    ],
+    "featured": false,
+    "series": "ai-exploration",
+    "seriesTitle": "KDP's AI exploration",
+    "chapter": 1
+  },
+  {
     "id": "ml-cad-automation",
     "title": "Accelerating Analog CAD Workflows with Graph Neural Networks",
     "date": "July 24, 2026",
@@ -7,7 +26,13 @@
     "category": "ML in VLSI",
     "summary": "Exploring how Graph Neural Networks (GNNs) can predict parasitic capacitance and automate sizing in high-speed CMOS analog layouts before post-layout SPICE simulation.",
     "url": "article.html?id=ml-cad-automation",
-    "tags": ["Analog CAD", "PyTorch", "GNN", "SPICE", "Automation"],
+    "tags": [
+      "Analog CAD",
+      "PyTorch",
+      "GNN",
+      "SPICE",
+      "Automation"
+    ],
     "featured": true
   },
   {
@@ -18,7 +43,13 @@
     "category": "Silicon Design",
     "summary": "A comprehensive retrospective on physical design challenges, IR-drop debugging with Ansys RedHawk, and open-source EDA toolchains across 10 successful silicon tapeouts.",
     "url": "article.html?id=riscv-openlane-tapeouts",
-    "tags": ["OpenLane", "SkyWater 130nm", "ASIC", "RISC-V", "RedHawk"],
+    "tags": [
+      "OpenLane",
+      "SkyWater 130nm",
+      "ASIC",
+      "RISC-V",
+      "RedHawk"
+    ],
     "featured": false
   }
 ]

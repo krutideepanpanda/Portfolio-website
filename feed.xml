@@ -5,8 +5,16 @@
     <link>https://krutideepanpanda.com/Antigravity/blog.html</link>
     <description>Insights on VLSI, CAD Automation, and Advanced Semiconductor Engineering by Kruti Deepan Panda</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://krutideepanpanda.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Google Antigravity - Initial impressions</title>
+      <link>https://krutideepanpanda.com/Antigravity/article.html?id=google-antigravity-initial-impressions</link>
+      <guid>https://krutideepanpanda.com/Antigravity/article.html?id=google-antigravity-initial-impressions</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Initial hands-on impressions evaluating Google Antigravity and Gemini AI Pro for software engineering workflows, client app development, and hardware design.</description>
+    </item>
 
     <item>
       <title>Automating Analog CAD Workflows with Python &amp; TCL Hooks</title>
