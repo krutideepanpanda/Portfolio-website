@@ -332,8 +332,9 @@ async function initBlogLoader() {
   const blogGrid = document.getElementById('blog-grid');
   if (!blogGrid) return;
 
-  // Try fetching from relative path first, then absolute root path
-  const pathsToTry = ['../Blog/posts.json', '/Blog/posts.json'];
+  // Fetch posts with cache busting to always get the latest list!
+  const cacheBuster = `?v=${new Date().getTime()}`;
+  const pathsToTry = [`../Blog/posts.json${cacheBuster}`, `/Blog/posts.json${cacheBuster}`];
   let posts = null;
 
   for (const path of pathsToTry) {
@@ -357,13 +358,22 @@ async function initBlogLoader() {
     return;
   }
 
+  // Showcase only the last 3 posted blogs
+  const recentPosts = posts.slice(0, 3);
+
   // Render Blog Cards
   blogGrid.innerHTML = '';
-  posts.forEach((post) => {
+  recentPosts.forEach((post) => {
     const card = document.createElement('article');
     card.className = 'blog-card reveal';
     
     const tagsHtml = (post.tags || []).map(tag => `<span class="blog-tag">#${tag}</span>`).join('');
+    
+    // Support for chapters
+    const seriesBadge = post.seriesTitle ? 
+      `<div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+        <i class="fa-solid fa-layer-group" style="margin-right: 4px;"></i> ${post.seriesTitle} — Chapter ${post.chapter || 1}
+      </div>` : '';
     
     card.innerHTML = `
       <div>
@@ -371,6 +381,7 @@ async function initBlogLoader() {
           <span class="blog-category">${post.category || 'VLSI Engineering'}</span>
           <span><i class="fa-regular fa-clock" style="margin-right: 0.3rem;"></i>${post.readTime || '5 min read'}</span>
         </div>
+        ${seriesBadge}
         <h3 class="blog-title">${post.title}</h3>
         <p class="blog-summary">${post.summary}</p>
         <div class="blog-tags">${tagsHtml}</div>

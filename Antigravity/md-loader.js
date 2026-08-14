@@ -117,7 +117,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 5. Render Header
   if (headerContainer) {
+    const seriesBadge = metadata.seriesTitle ? 
+      `<div style="font-size: 0.9rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; display: inline-block; padding: 6px 12px; border: 1px solid var(--accent); border-radius: 4px; background: rgba(0, 229, 255, 0.05);">
+        <i class="fa-solid fa-layer-group" style="margin-right: 6px;"></i> ${metadata.seriesTitle} — Chapter ${metadata.chapter || 1}
+      </div>` : '';
+
     headerContainer.innerHTML = `
+      ${seriesBadge}
       <div class="article-meta">
         <span class="category-tag">${metadata.category}</span>
         <span><i class="fa-regular fa-calendar" style="margin-right:0.3rem;"></i> ${metadata.date}</span>
