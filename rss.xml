@@ -25,22 +25,6 @@
     <description>Initial hands-on impressions evaluating Google Antigravity and Gemini AI Pro for software engineering workflows, client app development, and hardware design.</description>
   </item>
   
-  <item>
-    <title>Accelerating Analog CAD Workflows with Graph Neural Networks</title>
-    <link>https://krutideepanpanda.com/Antigravity/article.html?id=ml-cad-automation</link>
-    <guid isPermaLink="true">https://krutideepanpanda.com/Antigravity/article.html?id=ml-cad-automation</guid>
-    <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-    <category>ML in VLSI</category>
-    <description>Exploring how Graph Neural Networks (GNNs) can predict parasitic capacitance and automate sizing in high-speed CMOS analog layouts before post-layout SPICE simulation.</description>
-  </item>
-  
-  <item>
-    <title>Lessons from 10+ ASIC Tapeouts: OpenLane &amp; SkyWater 130nm</title>
-    <link>https://krutideepanpanda.com/Antigravity/article.html?id=riscv-openlane-tapeouts</link>
-    <guid isPermaLink="true">https://krutideepanpanda.com/Antigravity/article.html?id=riscv-openlane-tapeouts</guid>
-    <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
-    <category>Silicon Design</category>
-    <description>A comprehensive retrospective on physical design challenges, IR-drop debugging with Ansys RedHawk, and open-source EDA toolchains across 10 successful silicon tapeouts.</description>
-  </item>
+
 </channel>
 </rss>

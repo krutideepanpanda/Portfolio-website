@@ -33,39 +33,5 @@
     "series": "ai-exploration",
     "seriesTitle": "KDP's AI exploration",
     "chapter": 1
-  },
-  {
-    "id": "ml-cad-automation",
-    "title": "Accelerating Analog CAD Workflows with Graph Neural Networks",
-    "date": "July 24, 2026",
-    "readTime": "7 min read",
-    "category": "ML in VLSI",
-    "summary": "Exploring how Graph Neural Networks (GNNs) can predict parasitic capacitance and automate sizing in high-speed CMOS analog layouts before post-layout SPICE simulation.",
-    "url": "article.html?id=ml-cad-automation",
-    "tags": [
-      "Analog CAD",
-      "PyTorch",
-      "GNN",
-      "SPICE",
-      "Automation"
-    ],
-    "featured": true
-  },
-  {
-    "id": "riscv-openlane-tapeouts",
-    "title": "Lessons from 10+ ASIC Tapeouts: OpenLane & SkyWater 130nm",
-    "date": "July 15, 2026",
-    "readTime": "10 min read",
-    "category": "Silicon Design",
-    "summary": "A comprehensive retrospective on physical design challenges, IR-drop debugging with Ansys RedHawk, and open-source EDA toolchains across 10 successful silicon tapeouts.",
-    "url": "article.html?id=riscv-openlane-tapeouts",
-    "tags": [
-      "OpenLane",
-      "SkyWater 130nm",
-      "ASIC",
-      "RISC-V",
-      "RedHawk"
-    ],
-    "featured": false
   }
 ]
