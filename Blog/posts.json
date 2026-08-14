@@ -1,5 +1,21 @@
 [
   {
+    "id": "antigravity-jellyfin-client",
+    "title": "Antigravity - Jellyfin Client",
+    "date": "August 14, 2026",
+    "readTime": "5 min read",
+    "category": "AI Exploration",
+    "summary": "A brief look into the colossal chaos that is Antigravity in Google android studio.",
+    "url": "article.html?id=antigravity-jellyfin-client",
+    "tags": [
+      "Antigravity"
+    ],
+    "featured": false,
+    "series": "ai-exploration",
+    "seriesTitle": "KDP's AI exploration",
+    "chapter": 2
+  },
+  {
     "id": "google-antigravity-initial-impressions",
     "title": "Google Antigravity - Initial impressions",
     "date": "August 14, 2026",
