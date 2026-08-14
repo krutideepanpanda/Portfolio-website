@@ -361,41 +361,72 @@ async function initBlogLoader() {
   // Showcase only the last 3 posted blogs
   const recentPosts = posts.slice(0, 3);
 
-  // Render Blog Cards
+  // Render Blog Cards Grouped by Series
   blogGrid.innerHTML = '';
-  recentPosts.forEach((post) => {
-    const card = document.createElement('article');
-    card.className = 'blog-card reveal';
+  blogGrid.className = ''; // Remove grid layout from parent to stack series vertically
+  
+  // Group posts by seriesTitle
+  const groups = {};
+  recentPosts.forEach(post => {
+    const series = post.seriesTitle || 'Standalone Articles';
+    if (!groups[series]) groups[series] = [];
+    groups[series].push(post);
+  });
+
+  // Render each group
+  Object.keys(groups).forEach(series => {
+    // Create Series Header
+    const seriesHeader = document.createElement('div');
+    seriesHeader.style.marginBottom = '2rem';
+    seriesHeader.style.marginTop = Object.keys(groups).indexOf(series) === 0 ? '0' : '4rem';
     
-    const tagsHtml = (post.tags || []).map(tag => `<span class="blog-tag">#${tag}</span>`).join('');
-    
-    // Support for chapters
-    const seriesBadge = post.seriesTitle ? 
-      `<div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
-        <i class="fa-solid fa-layer-group" style="margin-right: 4px;"></i> ${post.seriesTitle} — Chapter ${post.chapter || 1}
-      </div>` : '';
-    
-    card.innerHTML = `
-      <div>
-        <div class="blog-top">
-          <span class="blog-category">${post.category || 'VLSI Engineering'}</span>
-          <span><i class="fa-regular fa-clock" style="margin-right: 0.3rem;"></i>${post.readTime || '5 min read'}</span>
-        </div>
-        ${seriesBadge}
-        <h3 class="blog-title">${post.title}</h3>
-        <p class="blog-summary">${post.summary}</p>
-        <div class="blog-tags">${tagsHtml}</div>
-      </div>
-      <div class="blog-footer">
-        <span style="font-size: 0.82rem; color: var(--text-tertiary);"><i class="fa-regular fa-calendar" style="margin-right:0.3rem;"></i>${post.date}</span>
-        <a href="${post.url}" class="blog-btn">
-          <span>Read Article</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
+    const icon = series === 'Standalone Articles' ? 'fa-file-lines' : 'fa-layer-group';
+    seriesHeader.innerHTML = `
+      <h2 style="font-size: 1.8rem; color: var(--text-primary); font-weight: 800; border-bottom: 2px solid rgba(0, 240, 255, 0.2); padding-bottom: 0.8rem; display: inline-flex; align-items: center; gap: 0.8rem;">
+        <i class="fa-solid ${icon}" style="color: var(--neon-cyan);"></i> ${series}
+      </h2>
     `;
+    blogGrid.appendChild(seriesHeader);
+
+    // Create Grid for this Series
+    const seriesGrid = document.createElement('div');
+    seriesGrid.className = 'blog-grid';
     
-    blogGrid.appendChild(card);
+    groups[series].forEach(post => {
+      const card = document.createElement('article');
+      card.className = 'blog-card reveal';
+      
+      const tagsHtml = (post.tags || []).map(tag => `<span class="blog-tag">#${tag}</span>`).join('');
+      
+      const chapterBadge = post.chapter ? 
+        `<div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+          Chapter ${post.chapter}
+        </div>` : '';
+      
+      card.innerHTML = `
+        <div>
+          <div class="blog-top">
+            <span class="blog-category">${post.category || 'VLSI Engineering'}</span>
+            <span><i class="fa-regular fa-clock" style="margin-right: 0.3rem;"></i>${post.readTime || '5 min read'}</span>
+          </div>
+          ${chapterBadge}
+          <h3 class="blog-title">${post.title}</h3>
+          <p class="blog-summary">${post.summary}</p>
+          <div class="blog-tags">${tagsHtml}</div>
+        </div>
+        <div class="blog-footer">
+          <span style="font-size: 0.82rem; color: var(--text-tertiary);"><i class="fa-regular fa-calendar" style="margin-right:0.3rem;"></i>${post.date}</span>
+          <a href="${post.url}" class="blog-btn">
+            <span>Read Article</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      `;
+      
+      seriesGrid.appendChild(card);
+    });
+    
+    blogGrid.appendChild(seriesGrid);
   });
 
   // Dynamically populate top navigation dropdown menu with loaded blog posts
