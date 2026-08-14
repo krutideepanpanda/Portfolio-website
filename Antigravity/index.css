@@ -835,9 +835,9 @@ section {
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  align-items: stretch;
   gap: 2.5rem;
 }
 
@@ -2233,7 +2233,7 @@ footer span {
 }
 
 .projects-grid-ext-55 {
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.2rem; align-items: stretch;
 }
 
 .hub-card-ext-56 {
