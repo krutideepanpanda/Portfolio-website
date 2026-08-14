@@ -5,6 +5,9 @@ date: "August 14, 2026"
 category: "AI Exploration"
 readTime: "5 min read"
 tags: ["Antigravity", "AI Exploration", "Gemini", "Evaluation"]
+series: "ai-exploration"
+seriesTitle: "KDP's AI exploration"
+chapter: 1
 summary: "Initial hands-on impressions evaluating Google Antigravity and Gemini AI Pro for software engineering workflows, client app development, and hardware design."
 ---
 

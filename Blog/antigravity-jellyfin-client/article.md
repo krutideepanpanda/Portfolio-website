@@ -5,6 +5,9 @@ date: "August 14, 2026"
 category: "AI Exploration"
 readTime: "5 min read"
 tags: ["Antigravity"]
+series: "ai-exploration"
+seriesTitle: "KDP's AI exploration"
+chapter: 2
 summary: "A brief look into the colossal chaos that is Antigravity in Google android studio."
 ---
 
