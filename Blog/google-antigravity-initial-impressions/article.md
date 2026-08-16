@@ -13,15 +13,12 @@ summary: "Initial hands-on impressions evaluating Google Antigravity and Gemini 
 
 # Google Antigravity - Initial impressions
 
-As part of my AI exploration of different models offered by major players in the industry, I took a Google AI subscription.
-The subscription I decided to use was Gemini AI Pro. It is priced at ₹2000 (~$20) monthly and gave access to its entire suite of models.
-Gemini AI Pro also gives access to Claude Opus 4.6, Claude Sonnet 4.6, and GPT-OSS 120B models. Much like most providers, it has standard 5-hour and weekly limits.
-However, Antigravity doesn't really show my token usage or how much context each model was using so I can't really comment on this.
+As part of my ongoing exploration of the AI models offered by the industry's major players, I recently picked up a Google AI subscription. I opted for Gemini AI Pro. Priced at ₹2000 (~$20) a month, it unlocks access to their entire suite of models. Gemini AI Pro also provides access to Claude Opus 4.6, Claude Sonnet 4.6, and the GPT-OSS 120B models. Like most providers, it enforces standard five-hour and weekly usage limits. However, Antigravity doesn't actually surface my token usage or show how much context each model is consuming, so I can't really comment on its efficiency in that regard.
 
-I like that my AI subscription also gives me access to Google's image and video generator models. Playing around with Nano Banana and Google Flow was fun, but I didn't feel I had much use for it.
+I appreciate that the subscription bundles access to Google's image and video generation models. Playing around with Nano Banana and Google Flow was fun, but I haven't found much practical use for them in my workflow.
 
-To properly evaluate Google's best models, I will use Antigravity with Gemini 3.1 Pro exclusively to accomplish 3 main tasks:
+To properly put Google's best models to the test, I will be using Antigravity exclusively with Gemini 3.1 Pro to tackle three main tasks:
 
-1. Build a fork of Jellyfin's Android client that supports auto-downloading episodes of the shows you are watching.
+1. Building a fork of the Jellyfin Android client that supports auto-downloading episodes of the shows you are currently watching.
 2. Building my portfolio website.
-3. Building a 64-bit RISC-V CPU with OpenLane.
+3. Building a 64-bit RISC-V CPU using OpenLane.

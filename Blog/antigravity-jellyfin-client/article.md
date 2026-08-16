@@ -9,17 +9,19 @@ series: "ai-exploration"
 seriesTitle: "KDP's AI exploration"
 chapter: 2
 experimentResult: "FAIL"
-summary: "A brief look into the colossal chaos that is Antigravity in Google android studio."
+summary: "A brief look into the colossal chaos of using Antigravity within Google Android Studio."
 ---
 
 # Antigravity - Jellyfin Client
 
-I started the project [[Antigravity-jellyfin-client](https://github.com/krutideepanpanda/Antigravity-jellyfin-client)] thinking it should be fairly simple. After all, Jellyfin's android client is available on github and I just need an automated download option.
-This is when I realised just how bad of an experience this was going to be. Google with their huge genius brain decided to not let users use their Gemini AI pro subscriptions inside Android Studio.
-Android Studio only uses Gemini API keys and that is basically using the free tier. Which means if you are a dumbass like me and want to vibe code an android app you are basically using the caveman equivalent of LLMs.
-Even if you use Antigravity and building the through CLI, Gemini just can't use adb correctly to debug the errors you are having with the app. The app that it developed initially was so bad it kept crashing continuously, and despite using ADB it was not able to debug. After giving up on Gemini, I used Claude Opus 4.6 which then quickly fixed the issue and let me proceed. Why Google? Why? Was it that hard to make YOUR own LLM to best with YOUR own tools? Do you realize how bad your LLMs are if I have to use Opus to fix the bugs you made?
+I initiated the [[Antigravity-jellyfin-client](https://github.com/krutideepanpanda/Antigravity-jellyfin-client)] project under the assumption that it would be remarkably straightforward. After all, Jellyfin's official Android client is open-source on GitHub, and my sole requirement was to implement an automated download feature.
 
-If all that rage was not enough to tell you how annoying this experience was, let me tell one more smooth brained thing Gemini did.
-Even after me specifically asking it to be a fork of Jellyfin's android client, Gemini started it from scratch. I even asked to have feature parity with the official client, so that it understand that is has to make a fork and build on top of it. Obviously this smooth brained LLM said it did get feature parity and blatantly lied to me.
+This is precisely when I realized just how abysmal this development experience was destined to be. Google, in a stroke of sheer genius, decided to prohibit users from utilizing their Gemini AI Pro subscriptions directly inside Android Studio. Android Studio exclusively relies on Gemini API keys, which effectively forces you onto the free tier. Consequently, if you are naive enough to attempt vibe-coding an Android application, you are essentially relegated to using the caveman equivalent of modern LLMs.
 
-After an awful migrane inducing week, I have given up on this project. If anyone from Google's AI team is reading this, please improve your product. Atleast make it the best choice to work on your own tools. If this is what Google's vision of LLM is then I am so glad, because this AI will never replace any job.
+Even if you circumvent this by using Antigravity and building via the CLI, Gemini remains fundamentally incapable of utilizing ADB correctly to debug runtime errors. The initial application it generated was so structurally unsound that it crashed incessantly, and despite having access to ADB logs, the model failed completely at debugging. After finally giving up on Gemini, I switched to Claude Opus 4.6, which diagnosed and resolved the issue almost immediately, allowing me to proceed. Why, Google? Why? Was it genuinely that difficult to integrate your own LLM to function optimally with your own development tools? Do you comprehend how poor your models must be if I am forced to rely on Opus to patch the bugs your system created?
+
+If that level of frustration was insufficient to convey the sheer annoyance of this experience, allow me to share one more remarkably smooth-brained decision Gemini made.
+
+Despite my explicit instructions to create a fork of the official Jellyfin Android client—and my direct request for feature parity to ensure it understood it was building upon an existing codebase—Gemini inexplicably started the project entirely from scratch. When confronted, this supposedly advanced LLM boldly claimed it had achieved feature parity, blatantly lying to me in the process.
+
+Following a migraine-inducing week of development hell, I have officially abandoned this project. If anyone from Google's AI division happens to read this: please, fix your product. At the bare minimum, make it the superior choice for your proprietary tooling ecosystem. If this iteration represents Google's grand vision for LLMs, then I am profoundly relieved, because this AI is categorically incapable of replacing any engineering job.
