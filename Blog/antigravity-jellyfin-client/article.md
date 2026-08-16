@@ -8,6 +8,7 @@ tags: ["Antigravity"]
 series: "ai-exploration"
 seriesTitle: "KDP's AI exploration"
 chapter: 2
+experimentResult: "FAIL"
 summary: "A brief look into the colossal chaos that is Antigravity in Google android studio."
 ---
 

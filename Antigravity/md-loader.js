@@ -122,8 +122,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         <i class="fa-solid fa-layer-group" style="margin-right: 6px;"></i> ${metadata.seriesTitle} — Chapter ${metadata.chapter || 1}
       </div>` : '';
 
+    let experimentBadge = '';
+    if (metadata.experimentResult) {
+      const result = metadata.experimentResult.toUpperCase();
+      if (result === 'PASS') {
+        experimentBadge = `<div class="experiment-badge experiment-pass" style="margin-bottom: 1rem;"><i class="fa-solid fa-circle-check"></i> EXPERIMENT: SUCCESS</div>`;
+      } else if (result === 'FAIL') {
+        experimentBadge = `<div class="experiment-badge experiment-fail" style="margin-bottom: 1rem;"><i class="fa-solid fa-triangle-exclamation"></i> EXPERIMENT: FAILED</div>`;
+      }
+    }
+
     headerContainer.innerHTML = `
-      ${seriesBadge}
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        ${seriesBadge}
+        ${experimentBadge}
+      </div>
       <div class="article-meta">
         <span class="category-tag">${metadata.category}</span>
         <span><i class="fa-regular fa-calendar" style="margin-right:0.3rem;"></i> ${metadata.date}</span>

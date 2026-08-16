@@ -6,6 +6,10 @@ category: "AI Exploration"
 readTime: "5 min read"
 tags: ["Antigravity"]
 summary: "An insight to my experience into both encouraging and enraging experience"
+series: "ai-exploration"
+seriesTitle: "KDP's AI exploration"
+chapter: 3
+experimentResult: "PASS"
 ---
 
 # Antigravity - Portfolio website

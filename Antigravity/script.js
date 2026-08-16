@@ -388,11 +388,22 @@ async function initBlogLoader() {
     `;
     blogGrid.appendChild(seriesHeader);
 
-    // Create Grid for this Series
-    const seriesGrid = document.createElement('div');
-    seriesGrid.className = 'blog-grid';
+    // Determine if this series is strict (has chapters)
+    const isStrictSeries = groups[series].some(p => p.chapter);
+    
+    const seriesContainer = document.createElement('div');
+    seriesContainer.className = isStrictSeries ? 'series-timeline' : 'blog-grid';
     
     groups[series].forEach(post => {
+      // Wrapper for timeline layout
+      let cardWrapper = seriesContainer;
+      if (isStrictSeries) {
+        const node = document.createElement('div');
+        node.className = 'timeline-node';
+        seriesContainer.appendChild(node);
+        cardWrapper = node;
+      }
+
       const card = document.createElement('article');
       card.className = 'blog-card reveal';
       
@@ -402,6 +413,17 @@ async function initBlogLoader() {
         `<div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
           Chapter ${post.chapter}
         </div>` : '';
+        
+      // Experiment Result Badge
+      let experimentBadge = '';
+      if (post.experimentResult) {
+        const result = post.experimentResult.toUpperCase();
+        if (result === 'PASS') {
+          experimentBadge = `<div class="experiment-badge experiment-pass"><i class="fa-solid fa-circle-check"></i> EXPERIMENT: SUCCESS</div>`;
+        } else if (result === 'FAIL') {
+          experimentBadge = `<div class="experiment-badge experiment-fail"><i class="fa-solid fa-triangle-exclamation"></i> EXPERIMENT: FAILED</div>`;
+        }
+      }
       
       card.innerHTML = `
         <div>
@@ -410,6 +432,7 @@ async function initBlogLoader() {
             <span><i class="fa-regular fa-clock" style="margin-right: 0.3rem;"></i>${post.readTime || '5 min read'}</span>
           </div>
           ${chapterBadge}
+          ${experimentBadge}
           <h3 class="blog-title">${post.title}</h3>
           <p class="blog-summary">${post.summary}</p>
           <div class="blog-tags">${tagsHtml}</div>
@@ -423,10 +446,10 @@ async function initBlogLoader() {
         </div>
       `;
       
-      seriesGrid.appendChild(card);
+      cardWrapper.appendChild(card);
     });
     
-    blogGrid.appendChild(seriesGrid);
+    blogGrid.appendChild(seriesContainer);
   });
 
   // Dynamically populate top navigation dropdown menu with loaded blog posts
