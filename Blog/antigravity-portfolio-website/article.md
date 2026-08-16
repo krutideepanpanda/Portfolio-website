@@ -5,7 +5,7 @@ date: "August 16, 2026"
 category: "AI Exploration"
 readTime: "5 min read"
 tags: ["Antigravity"]
-summary: "An insight into my experience with Antigravity: equal parts encouraging and enraging."
+summary: "An insight to my experience into both encouraging and enraging experience"
 series: "ai-exploration"
 seriesTitle: "KDP's AI exploration"
 chapter: 3
@@ -14,8 +14,11 @@ experimentResult: "PASS"
 
 # Antigravity - Portfolio website
 
-Using Antigravity to build my portfolio website was a truly remarkable experience. While there were occasional, bizarre instances of Gemini hallucinating, they remained easily rectifiable.
+Using antigravity to make my Portfolio website was a truly amazing experience. There were some weird issues of Gemini hallucinating at times but was still an easy fix.
 
-As part of the initial build, I provided Gemini with my CV and GitHub profile, leaving the stylistic decisions entirely in its hands. I was pleasantly surprised when it correctly inferred a silicon-themed aesthetic, delivering a highly interactive design. It incorporated engaging animations for individual UI elements, giving the site a surprisingly polished, premium feel right out of the gate. Furthermore, Gemini accurately parsed my GitHub profile, intelligently categorizing and showcasing my projects without needing manual intervention.
+As part of building my portfolio website I gave Gemini my CV and my GitHub profile and left it to decide on the styling of the site.
+I was pleasantly surprised when Gemini was able to decide a silicon themed style for the website with a very interactive website.
+It was also able to have some very fun animations for each UI element that gave the site a polished experience.
+Gemini was able to correctly able to read my GitHub profile and correctly categorize and showcase my projects.
 
-However, although the site appeared flawless initially, I quickly discovered a critical flaw: it lacked responsive optimization. The vast majority of text boxes and UI components were built with hard-coded dimensions. Consequently, the moment I viewed the site on any device other than my PC, the interface broke completely, rendering the site unusable. While Gemini could resolve the majority of these layout bugs with a single prompt, it struggled profoundly to comprehend edge cases. Ultimately, I had to exhaust nearly my entire 5-hour usage limit solely to resolve these persistent sizing issues.
+Though the site seemed polished initially, I quickly realized it was not at all optimized for varying screen sizes. Infact most of the text boxes and UI elements had hard-coded sizes. This meant the moment I used any other device other than my PC to see the website; the site was unusable. Gemini was able to fix majority of such bugs within a single prompt but struggled to understand the edge cases. This meant I had to nearly spend my entire 5-hour usage limit just to fix the sizing issues.
