@@ -5,8 +5,16 @@
   <link>https://krutideepanpanda.com/Antigravity/blog.html</link>
   <description>Technical articles and lab notes on Analog CAD Automation, ML circuit generation, RISC-V OpenLane tapeouts, and EDA toolchains by Kruti Deepan Panda.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 14 Aug 2026 12:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 16 Aug 2026 12:00:00 GMT</lastBuildDate>
   <atom:link href="https://krutideepanpanda.com/Blog/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Antigravity - Portfolio website</title>
+    <link>https://krutideepanpanda.com/Antigravity/article.html?id=antigravity-portfolio-website</link>
+    <guid isPermaLink="true">https://krutideepanpanda.com/Antigravity/article.html?id=antigravity-portfolio-website</guid>
+    <pubDate>Sun, 16 Aug 2026 12:00:00 GMT</pubDate>
+    <category>AI Exploration</category>
+    <description>An insight to my experience into both encouraging and enraging experience</description>
+  </item>
   <item>
     <title>Antigravity - Jellyfin Client</title>
     <link>https://krutideepanpanda.com/Antigravity/article.html?id=antigravity-jellyfin-client</link>

@@ -1,5 +1,21 @@
 [
   {
+    "id": "antigravity-portfolio-website",
+    "title": "Antigravity - Portfolio website",
+    "date": "August 16, 2026",
+    "readTime": "5 min read",
+    "category": "AI Exploration",
+    "summary": "An insight to my experience into both encouraging and enraging experience",
+    "url": "article.html?id=antigravity-portfolio-website",
+    "tags": [
+      "Antigravity"
+    ],
+    "featured": false,
+    "series": "ai-exploration",
+    "seriesTitle": "KDP's AI exploration",
+    "chapter": 3
+  },
+  {
     "id": "antigravity-jellyfin-client",
     "title": "Antigravity - Jellyfin Client",
     "date": "August 14, 2026",
