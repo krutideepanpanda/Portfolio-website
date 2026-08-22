@@ -1,5 +1,22 @@
 [
   {
+    "id": "antigravity-64bit-riscv-processor",
+    "title": "Antigravity - 64bit RISCV Processor",
+    "date": "August 22, 2026",
+    "readTime": "5 min read",
+    "category": "AI Exploration",
+    "summary": "My experiences with Gemini's colossal hallucinations and utter arrogance.",
+    "url": "article.html?id=antigravity-64bit-riscv-processor",
+    "tags": [
+      "Antigravity"
+    ],
+    "featured": false,
+    "series": "ai-exploration",
+    "seriesTitle": "KDP's AI exploration",
+    "chapter": 4,
+    "experimentResult": "FAIL"
+  },
+  {
     "id": "antigravity-portfolio-website",
     "title": "Antigravity - Portfolio website",
     "date": "August 16, 2026",
