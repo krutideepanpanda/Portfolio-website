@@ -81,12 +81,12 @@
     const box = document.createElement('div');
     box.className = 'article-error';
     const title = document.createElement('h1');
-    title.textContent = 'Field note unavailable';
+    title.textContent = 'Article unavailable';
     const copy = document.createElement('p');
     copy.textContent = message;
     const link = document.createElement('a');
     link.href = 'blog.html';
-    link.textContent = 'Return to all field notes';
+    link.textContent = 'Return to the blog';
     box.append(title, copy, link);
     header.replaceChildren(box);
     content.replaceChildren();
@@ -122,7 +122,7 @@
       labels.append(label);
     });
     const title = document.createElement('h1');
-    title.textContent = post.title || 'Field note';
+    title.textContent = post.title || 'Blog article';
     const summary = document.createElement('p');
     summary.className = 'article-summary';
     summary.textContent = post.summary || '';
@@ -143,10 +143,10 @@
       }
     });
 
-    document.title = `${post.title || 'Field Note'} — Kruti Deepan Panda`;
-    const description = post.summary || 'Technical field note by Kruti Deepan Panda.';
+    document.title = `${post.title || 'Blog Article'} — Kruti Deepan Panda`;
+    const description = post.summary || 'Technical blog article by Kruti Deepan Panda.';
     document.querySelector('meta[name="description"]').setAttribute('content', description);
-    document.getElementById('og-title').setAttribute('content', post.title || 'Field Note');
+    document.getElementById('og-title').setAttribute('content', post.title || 'Blog Article');
     document.getElementById('og-description').setAttribute('content', description);
     document.getElementById('canonical-link').setAttribute('href', `https://krutideepanpanda.com/Codex/article.html?id=${encodeURIComponent(id)}`);
   } catch (error) {

@@ -1,213 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kruti Deepan Panda | Personal Experiment Bench & AI Evaluation</title>
-  <meta name="description" content="Personal engineering laboratory and documentation by Kruti Deepan Panda evaluating different AI coding assistants through comparative website builds.">
-  <meta name="keywords" content="Kruti Deepan Panda, Silicon Design Engineer, AI Evaluation, Codex, Claude Code, Antigravity, VLSI, AMD">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151512">
+  <meta name="description" content="One portfolio brief, rebuilt with different AI coding assistants. Explore Kruti Deepan Panda's public comparison of Antigravity, OpenAI Codex, and Claude Code.">
   <meta name="author" content="Kruti Deepan Panda">
-  <link rel="canonical" href="https://krutideepanpanda.com/">
-  
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://krutideepanpanda.com/">
-  <meta property="og:title" content="Kruti Deepan Panda | Personal Experiment Bench & AI Evaluation">
-  <meta property="og:description" content="Personal engineering laboratory and documentation by Kruti Deepan Panda evaluating different AI coding assistants through comparative website builds.">
+  <meta property="og:title" content="Same brief. Different builders. | Kruti Deepan Panda">
+  <meta property="og:description" content="A public portfolio experiment comparing how different AI coding assistants approach the same real-world brief.">
   <meta property="og:site_name" content="Kruti Deepan Panda">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://krutideepanpanda.com/">
-  <meta property="twitter:title" content="Kruti Deepan Panda | Personal Experiment Bench & AI Evaluation">
-  <meta property="twitter:description" content="Personal engineering laboratory and documentation by Kruti Deepan Panda evaluating different AI coding assistants through comparative website builds.">
-
-  <!-- Schema.org Person Structured Data for Google Indexing -->
+  <meta property="og:image" content="https://krutideepanpanda.com/comparison-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Same brief. Different builders. | Kruti Deepan Panda">
+  <meta name="twitter:description" content="A public portfolio experiment comparing how different AI coding assistants approach the same real-world brief.">
+  <meta name="twitter:image" content="https://krutideepanpanda.com/comparison-og.png">
+  <title>Same Brief. Different Builders. | Kruti Deepan Panda</title>
+  <link rel="canonical" href="https://krutideepanpanda.com/">
+  <link rel="alternate" type="application/rss+xml" title="Kruti Deepan Panda — Technical Blog" href="rss.xml">
+  <link rel="icon" type="image/png" href="Antigravity/logo.png">
+  <link rel="stylesheet" href="comparison.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Kruti Deepan Panda",
-      "alternateName": ["Deepan Panda", "krutideepanpanda"],
-      "url": "https://krutideepanpanda.com",
-      "jobTitle": "Silicon Design Engineer // Analog Mixed-Signal & Behavioral Modeling",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "AMD"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "National Institute of Technology Karnataka (NITK), Surathkal"
-      },
-      "sameAs": [
-        "https://krutideepanpanda.com/Antigravity/index.html",
-        "https://github.com/krutideepanpanda",
-        "https://www.linkedin.com/in/krutideepanpanda"
-      ],
-      "knowsAbout": [
-        "Analog Mixed-Signal Design",
-        "CAD Automation",
-        "Behavioral Modeling",
-        "XMODEL",
-        "MODELZEN",
-        "Cadence Conformal LEC",
-        "Synopsys ESP",
-        "OpenLane",
-        "VLSI Design",
-        "RISC-V",
-        "SystemVerilog",
-        "Ansys Redhawk"
-      ]
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Kruti Deepan Panda — AI Portfolio Build Lab",
+      "url": "https://krutideepanpanda.com/",
+      "description": "A public comparison of portfolio websites built from the same brief with different AI coding assistants.",
+      "author": {
+        "@type": "Person",
+        "name": "Kruti Deepan Panda",
+        "url": "https://krutideepanpanda.com/",
+        "sameAs": ["https://github.com/krutideepanpanda", "https://www.linkedin.com/in/krutideepanpanda"]
+      }
     }
-  }
   </script>
-
-  <link rel="alternate" type="application/rss+xml" title="Kruti Deepan Panda | Technical Blog RSS Feed" href="rss.xml">
-  <link rel="stylesheet" href="Antigravity/root-index.css">
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
-  <link rel="icon" type="image/png" href="/Antigravity/logo.png">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to comparison</a>
+  <header class="site-header">
+    <a class="identity" href="/" aria-label="Kruti Deepan Panda — comparison home">
+      <span class="identity-mark" aria-hidden="true">KDP</span>
+      <span class="identity-copy"><strong>AI Build Lab</strong><small>Kruti Deepan Panda</small></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#iterations">Iterations</a>
+      <a href="#method">Method</a>
+      <a href="https://github.com/krutideepanpanda" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-  <!-- Ambient Glow Background & Subtle Architectural Grid -->
-  <div class="ambient-background">
-    <div class="ambient-glow glow-warm"></div>
-    <div class="ambient-glow glow-cool"></div>
-  </div>
-  <canvas id="bg-canvas"></canvas>
-
-  <!-- Master Content Wrapper -->
-  <main class="content-wrapper">
-    
-    <!-- Hero Introduction -->
-    <header class="hero-header">
-      <div class="profile-pill">
-        <i class="fa-solid fa-compass"></i> Engineering Sandbox & Documentation
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>Portfolio experiment</span><span>Edition 01—03</span></p>
+        <h1 id="hero-title">Same brief.<br><em>Different builders.</em></h1>
+        <p class="hero-summary">A public, real-world comparison of how AI coding assistants interpret one portfolio brief—through architecture, visual judgment, content handling, and day-to-day workflow.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#iterations">Compare the builds <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="Codex/index.html">Enter the ongoing Codex build <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-      <h1 class="main-title">
-        Hi I am <span>Kruti Deepan Panda</span>
-      </h1>
-      <p class="subtitle">
-        Welcome to my personal experiment bench and software evaluation laboratory.
-      </p>
-    </header>
-
-    <!-- Comprehensive Experiment Statement -->
-    <section class="experiment-card">
-      <div class="experiment-title">
-        <i class="fa-solid fa-flask-vial"></i>
-        <span>My Portfolio & AI Experiments</span>
-      </div>
-      <p class="experiment-text">
-        As a Silicon Design Engineer and VLSI Architect, I am deeply fascinated by the rapid evolution of software engineering methodologies and modern automation. This website serves as a personal laboratory and documentation experiment where I explore the practical capabilities of various AI coding assistants. Rather than evaluating these tools in abstract benchmarks, my goal is to repeat the same project with different AI tools and see how they fare against each other. By subjecting each assistant to identical design goals, interactive features, and technical constraints, I aim to observe their differences in real-world code generation, architectural choices, aesthetic refinement, and overall workflow efficiency.
-      </p>
-      
-      <div class="div-ext-1">
-        <a href="Antigravity/blog.html" class="action-btn btn-primary action-btn-ext-2">
-          <i class="fa-solid fa-pen-nib fa-solid-ext-3"></i> Antigravity Blog
-        </a>
-        <a href="Codex/blog.html" class="action-btn btn-primary action-btn-ext-2">
-          <i class="fa-solid fa-pen-nib fa-solid-ext-5"></i> Codex Blog
-        </a>
-        <a href="javascript:void(0)" class="action-btn btn-disabled action-btn-ext-4" title="Coming Soon" aria-disabled="true" tabindex="-1">
-          <i class="fa-solid fa-pen-nib fa-solid-ext-5"></i> Claude Code Blog
-        </a>
+      <aside class="experiment-note" aria-label="Experiment parameters">
+        <p class="note-label">The constant</p><p class="note-value">One person.<br>One source set.<br>One project brief.</p>
+        <div class="note-rule"></div>
+        <p class="note-label">The variable</p><p class="note-value accent">The builder.</p>
+      </aside>
+      <div class="hero-index" aria-label="Experiment summary">
+        <div><span>03</span><small>Assistants</small></div><div><span>01</span><small>Shared brief</small></div><div><span>Real</span><small>Project constraints</small></div><div><span>Public</span><small>Build notes</small></div>
       </div>
     </section>
 
-    <!-- Tools Evaluation Section -->
-    <section>
-      <h2 class="section-heading">
-        <span>Portfolio Project Iterations</span>
-      </h2>
-
-      <div class="tools-list">
-        
-        <!-- 1. Antigravity -->
-        <article class="tool-item completed-build">
-          <div>
-            <div class="tool-top">
-              <div class="tool-identity">
-                <div class="tool-icon">
-                  <i class="fa-solid fa-wand-magic-sparkles"></i>
-                </div>
-                <h3 class="tool-name">Antigravity</h3>
-              </div>
-              <span class="badge badge-completed"><i class="fa-solid fa-check"></i> Completed</span>
-            </div>
-            <p class="tool-desc tool-desc-ext-6">
-              The initial portfolio project build generated using Google DeepMind's Antigravity assistant. Features an interactive circuit canvas, dark-mode styling, and structured project documentation for silicon design engineering.
-            </p>
-          </div>
-          <div class="tool-action">
-            <a href="Antigravity/index.html" class="action-btn btn-primary">
-              <span>View Portfolio (Antigravity)</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+    <section class="iterations" id="iterations" aria-labelledby="iterations-title">
+      <div class="section-intro">
+        <p class="section-number">01 / Iterations</p>
+        <div><h2 id="iterations-title">Three approaches.<br>Kept deliberately separate.</h2><p>Each version receives the same factual source material. The implementation, aesthetic, and engineering choices are allowed to diverge.</p></div>
+      </div>
+      <div class="build-list">
+        <article class="build-card build-complete">
+          <header class="build-heading"><span class="build-number">01</span><span class="status status-complete">Completed</span></header>
+          <div class="build-body"><div><p class="builder-label">Google DeepMind</p><h3>Antigravity</h3></div><p>A dark, interactive first iteration with a circuit-canvas motif and a technology-forward presentation of the portfolio.</p></div>
+          <footer class="build-actions"><a class="button button-light" href="Antigravity/index.html">View portfolio <span aria-hidden="true">↗</span></a><a class="card-link" href="Antigravity/blog.html">Read its blog</a></footer>
         </article>
-
-        <!-- 2. OpenAI Codex -->
-        <article class="tool-item active-build">
-          <div>
-            <div class="tool-top">
-              <div class="tool-identity">
-                <div class="tool-icon">
-                  <i class="fa-solid fa-code"></i>
-                </div>
-                <h3 class="tool-name">OpenAI Codex</h3>
-              </div>
-              <span class="badge badge-completed"><i class="fa-solid fa-check"></i> Completed</span>
-            </div>
-            <p class="tool-desc tool-desc-ext-6">
-              An independent editorial portfolio built with OpenAI Codex, featuring clear multi-page navigation, verified project links, and a shared Markdown field-notes archive.
-            </p>
-          </div>
-          <div class="tool-action">
-            <a href="Codex/index.html" class="action-btn btn-primary">
-              <span>View Portfolio (Codex)</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+        <article class="build-card build-active">
+          <header class="build-heading"><span class="build-number">02</span><span class="status status-ongoing"><span class="status-dot" aria-hidden="true"></span>Ongoing</span></header>
+          <div class="build-body"><div><p class="builder-label">OpenAI</p><h3>Codex</h3></div><p>An independent editorial engineering portfolio focused on quick comprehension, clear single-section pages, verified links, and a shared Markdown field-notes archive.</p></div>
+          <footer class="build-actions"><a class="button button-blue" href="Codex/index.html">View ongoing build <span aria-hidden="true">↗</span></a><a class="card-link" href="Codex/blog.html">Read field notes</a></footer>
         </article>
-
-        <!-- 3. Anthropic Claude Code -->
-        <article class="tool-item planned-build">
-          <div>
-            <div class="tool-top">
-              <div class="tool-identity">
-                <div class="tool-icon">
-                  <i class="fa-solid fa-terminal"></i>
-                </div>
-                <h3 class="tool-name">Anthropic Claude Code</h3>
-              </div>
-              <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> In Queue</span>
-            </div>
-            <p class="tool-desc tool-desc-ext-6">
-              A planned replication of the portfolio website project utilizing Anthropic Claude Code for comparative evaluation against other agentic systems.
-            </p>
-          </div>
-          <div class="tool-action">
-            <button class="action-btn btn-disabled" disabled>
-              <i class="fa-solid fa-lock fa-solid-ext-7"></i> Coming Soon
-            </button>
-          </div>
+        <article class="build-card build-queued">
+          <header class="build-heading"><span class="build-number">03</span><span class="status status-queued">In queue</span></header>
+          <div class="build-body"><div><p class="builder-label">Anthropic</p><h3>Claude Code</h3></div><p>The third portfolio iteration is reserved for a future build and comparison.</p></div>
+          <footer class="build-actions"><span class="button button-disabled" aria-disabled="true">Not started</span><span class="card-link muted">Notes unavailable</span></footer>
         </article>
-
       </div>
     </section>
 
+    <section class="method" id="method" aria-labelledby="method-title">
+      <div class="section-intro">
+        <p class="section-number">02 / Method</p>
+        <div><h2 id="method-title">Not a synthetic benchmark.</h2><p>The comparison happens inside a maintained, published website. Every assistant has to work with existing content, inherited constraints, accessibility needs, and real deployment.</p></div>
+      </div>
+      <ol class="method-grid">
+        <li><span>01</span><strong>Source</strong><p>Begin from the same neutral professional and blog content.</p></li>
+        <li><span>02</span><strong>Build</strong><p>Let each assistant establish its own architecture and visual language.</p></li>
+        <li><span>03</span><strong>Observe</strong><p>Review clarity, maintainability, interaction, accessibility, and accuracy.</p></li>
+        <li><span>04</span><strong>Document</strong><p>Keep the versions public so the differences can be explored directly.</p></li>
+      </ol>
+    </section>
+
+    <section class="closing" aria-label="Explore the portfolio comparison">
+      <p class="section-number">Current focus / OpenAI Codex</p>
+      <h2>The second build is taking shape in public.</h2>
+      <a class="button button-primary" href="Codex/index.html">Explore Codex <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="page-footer">
-    <p>&copy; 2026 <strong>Kruti Deepan Panda</strong>. Personal software documentation and engineering sandbox.</p>
-  </footer>
-
-  <script src="Antigravity/root-script.js"></script>
+  <footer class="site-footer"><p>© 2026 Kruti Deepan Panda</p><p>One brief. Different builders. Visible results.</p><a href="mailto:contact@krutideepanpanda.com">contact@krutideepanpanda.com</a></footer>
 </body>
 </html>

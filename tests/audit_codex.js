@@ -104,9 +104,18 @@ async function audit() {
     await motionPage.close();
 
     const portalPage = await browser.newPage();
-    await portalPage.goto(`${base}/index.html`, { waitUntil: 'networkidle0' });
+    for (const viewport of VIEWPORTS) {
+      await portalPage.setViewport({ width: viewport.width, height: viewport.height });
+      await portalPage.goto(`${base}/index.html`, { waitUntil: 'networkidle0' });
+      assert(
+        !(await portalPage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)),
+        `Comparison portal overflows at ${viewport.name} (${viewport.width}px)`
+      );
+    }
     assert(await portalPage.$('a[href="Codex/index.html"]'), 'Comparison portal is missing the Codex portfolio link');
     assert(await portalPage.$('a[href="Codex/blog.html"]'), 'Comparison portal is missing the Codex blog link');
+    const codexStatus = await portalPage.$eval('.build-active .status', (element) => element.textContent.trim());
+    assert(codexStatus === 'Ongoing', 'OpenAI Codex must remain marked Ongoing');
     await portalPage.close();
 
     console.log('Codex portfolio audit passed: routes, responsive layouts, blog rendering, safe article IDs, links, and reduced motion.');

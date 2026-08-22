@@ -4,6 +4,15 @@ const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 
 if (navToggle && siteNav) {
+  const portalLink = document.createElement('a');
+  portalLink.className = 'nav-portal';
+  portalLink.href = '../index.html';
+  portalLink.textContent = 'All builds';
+  siteNav.prepend(portalLink);
+
+  const blogLink = siteNav.querySelector('a[href="blog.html"]');
+  if (blogLink) blogLink.textContent = 'Blog';
+
   navToggle.addEventListener('click', () => {
     const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!isOpen));
@@ -16,6 +25,11 @@ if (navToggle && siteNav) {
       siteNav.classList.remove('is-open');
     }
   });
+}
+
+const footerLead = document.querySelector('.site-footer > p:first-child');
+if (footerLead && footerLead.textContent.includes('Designed and built')) {
+  footerLead.textContent = 'Silicon, systems & software.';
 }
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
