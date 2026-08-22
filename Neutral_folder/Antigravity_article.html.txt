@@ -1,6 +1,0 @@
-Loading Technical Article... | Kruti Deepan Panda
-Back to Portfolio
-Loading article metadata from /Blog repository...
-Fetching and parsing Markdown document...
-Return to Blog Hub
-Subscribe via RSS
