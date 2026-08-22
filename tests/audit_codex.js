@@ -114,6 +114,9 @@ async function audit() {
     }
     assert(await portalPage.$('a[href="Codex/index.html"]'), 'Comparison portal is missing the Codex portfolio link');
     assert(await portalPage.$('a[href="Codex/blog.html"]'), 'Comparison portal is missing the Codex blog link');
+    assert(await portalPage.$('a[href="Antigravity/index.html"]'), 'Comparison portal is missing the Antigravity portfolio link');
+    const antigravitySource = fs.readFileSync(path.join(ROOT, 'Antigravity', 'index.html'), 'utf8');
+    assert(antigravitySource.includes('href="../index.html"'), 'Antigravity landing is missing its return-to-portal link');
     const codexStatus = await portalPage.$eval('.build-active .status', (element) => element.textContent.trim());
     assert(codexStatus === 'Ongoing', 'OpenAI Codex must remain marked Ongoing');
     await portalPage.close();
