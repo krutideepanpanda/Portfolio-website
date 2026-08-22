@@ -1,0 +1,48 @@
+Kruti Deepan Panda | Silicon Design Engineer & VLSI Architect
+Kruti Deepan Panda
+Portal
+01 // About
+02 // Experience
+03 // Projects
+04 // Skills
+05 // Leadership
+06 // Blog
+All Blog Articles
+Google Antigravity - Final verdict
+Antigravity - 64bit RISCV Processor
+Antigravity - Portfolio website
+Antigravity - Jellyfin Client
+Google Antigravity - Initial impressions
+Get In Touch
+AMD SILICON DESIGN ENGINEER // CAD & ML ARCHITECT
+Architecting Next-Gen Silicon & Analog CAD
+Specializing in Analog CAD Automation, Machine Learning-driven circuit sizing, and RNM (Real Number Modeling) for high-speed VLSI interfaces at AMD. Passionate open-source EDA contributor and ASIC tapeout instructor.
+Explore Career History
+View Silicon Projects
+EXPLORE SUBSECTIONS
+// Portfolio Subsections
+01 // PROFILE
+About Me
+Read my profile summary, academic honors at NITK (9.6 Honors GPA), and my core engineering philosophy across physical design and automation.
+Enter Section
+02 // TIMELINE
+Work Experience
+Deep dive into my contributions at AMD (Analog CAD & ML Circuit Sizing), Intel Corporation (Ansys Redhawk IR Drop), and Texas Instruments (DAC Trimming).
+Enter Section
+03 // SHOWCASE
+Featured Projects
+Explore 6+ major hardware & software projects including RISC-V OpenLane tapeout, FPGA CNN accelerators, 5-stage pipelined CPU, and AES encryption modules.
+Enter Section
+04 // COMPETENCIES
+Skills & Expertise
+Review my technical arsenal across VLSI CAD tools (OpenLane, Magic, Ansys Redhawk, XModel), HDLs (Verilog, SystemVerilog), and Python/TCL scripting.
+Enter Section
+05 // RECOGNITION
+Honors & Leadership
+Review my current industry CAD automation initiatives at AMD alongside my distinguished collegiate foundations: Rank 13 in IEEE SPCup 2021 Globally and IEEE NITK CASS Chair tenure.
+Enter Section
+06 // JOURNAL
+Technical Blog
+Read detailed technical articles and lab notes written in markdown on Analog CAD workflows, ML circuit automation, and ASIC design methodologies.
+Enter Section
+Designed & Architected by Kruti Deepan Panda // Built with Antigravity 2.0
