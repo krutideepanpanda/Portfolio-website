@@ -1,0 +1,53 @@
+Skills & Expertise | Kruti Deepan Panda | Silicon Design Engineer
+Kruti Deepan Panda
+Portal
+01 // About
+02 // Experience
+03 // Projects
+04 // Skills
+05 // Leadership
+06 // Blog
+All Blog Articles
+Antigravity - Portfolio website
+Antigravity - Jellyfin Client
+Google Antigravity - Initial impressions
+Get In Touch
+04 // Technical Arsenal
+Domain Competencies: EDA Toolchains, Hardware Description Languages, and Software Automation
+CAD Automation & Formal Verification Tools
+Python CAD Automation
+TCL Flow Automation
+CAD Automation Hooks
+Synopsys ESP
+Cadence Conformal LEC
+XMODEL & MODELZEN
+Bash Scripting
+ML Analog Circuit Sizing
+VLSI CAD & Analog Design Tools
+OpenLane Flow
+Magic VLSI
+Ansys Redhawk
+XModel (RNM)
+Ngspice
+Analog CAD Automation
+Synthesis & Optimization
+CMOS Logic Design
+HDLs & Hardware Architecture
+Verilog HDL
+RISC-V (PICORV32)
+ARM v7
+MIPS Architecture
+RNM Modeling
+High-Performance Computing
+Computer Architecture
+FPGA BRAM / LUTs
+Software & Automation Scripting
+Python (ML & GUI)
+C / C++
+MATLAB
+TCL Scripting
+Perl
+Bash / Shell Scripting
+Git & Version Control
+Linux / SFTP / RPi
+Designed & Architected by Kruti Deepan Panda // Built with Antigravity 2.0

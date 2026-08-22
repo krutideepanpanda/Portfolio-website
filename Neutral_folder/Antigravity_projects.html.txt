@@ -1,0 +1,129 @@
+Featured Projects | Kruti Deepan Panda | Silicon Design Engineer
+Kruti Deepan Panda
+Portal
+01 // About
+02 // Experience
+03 // Projects
+04 // Skills
+05 // Leadership
+06 // Blog
+All Blog Articles
+Antigravity - Portfolio website
+Antigravity - Jellyfin Client
+Google Antigravity - Initial impressions
+Get In Touch
+03 // Featured Projects
+Hardware & Software Engineering Showcase: VLSI Architecture, FPGA Accelerators, and Analog Automation Tools
+All Initiatives
+VLSI & ASIC Automation
+AI & Agentic CAD
+Software & Systems
+University Foundations
+Tier 1: Advanced Industry CAD Automation & AI-Assisted Silicon (2023 – Present)
+Showcasing cutting-edge agentic CAD toolchains, autonomous RISC-V FPGA tapeouts, and full-stack systems engineering.
+Industry CAD
+Internal CAD Automation
+Industry CAD Development | 2023 – Present
+Architected internal CAD automation workflows leveraging Python and TCL. Engineered custom scripts and automation hooks to accelerate analog circuit sizing, formal equivalence verification, and DRC/LVS routing iterations across advanced semiconductor process nodes.
+Efficiency
+Custom Scripting
+Architecture
+Custom Skills & Hooks
+Python Automation
+TCL Scripting
+EDA Workflows
+Automation Hooks
+Analog CAD
+Antigravity_RISCV_64bit_Processor
+Custom Architecture & Agentic Framework | 2024
+Designed a custom 1 GHz 64-bit RISC-V processor accompanied by an Agentic Framework. Features AI agents that monitor, test, and improve the RTL design while reporting real-time metrics to a beautiful dashboard.
+Target Architecture
+64-Bit RISC-V Core
+Framework
+Real-time Dashboard & AI
+RISC-V 64-bit
+Agentic Framework
+RTL
+Dashboard
+Formal Verification
+System-Level Mixed-Signal Modeling & Formal LEC
+Enterprise ASIC Methodologies | 2023 – Present
+Engineered system-level analog and mixed-signal verification environments leveraging XMODEL and MODELZEN by Scientific Analog. Executed rigorous equivalence checking and static property verification using Synopsys ESP and Cadence Conformal LEC across multi-million gate ASIC tapeouts.
+Analog Modeling
+XMODEL / MODELZEN
+Formal Verification
+Synopsys ESP / Conformal
+XMODEL
+MODELZEN
+Synopsys ESP
+Conformal LEC
+Mixed-Signal
+Tier 2: University & Research Foundations (NITK 2020 – 2023)
+Undergraduate honors thesis, academic tapeouts, and foundational hardware engineering research at National Institute of Technology Karnataka.
+RISC-V Microcontroller using OpenLane
+Under Prof. Ramesh Kini, NITK | Jan 2022 – Apr 2022
+Configured open-source RISC-V core PICORV32 with custom co-processors and modified the OpenLane flow for manufacturing GDSII files using SkyWater 130nm PDK. Performed extensive design space exploration across area and delay optimization.
+Max Frequency
+250 MHz Clock
+Chip Area
+0.49 – 0.70 mm²
+Verilog
+OpenLane
+SkyWater 130nm
+RISC-V Core
+Configurable Framework for CNN on Hardware
+Under Prof. Sumam David, NITK | Jan 2023 – Apr 2023
+Designed scalable memory architectures to efficiently utilize onboard FPGA BRAM to load input parameters of CNNs of any kernel size and stride length. Exploited pixel re-usability during convolution to drastically reduce LUT utilization.
+Optimization
+Low LUT / BRAM
+Scalability
+Any Kernel / Stride
+FPGA Design
+Hardware Accelerator
+CNN Architecture
+Verilog
+MIT Beta-ISA Pipelined Microprocessor
+Under Prof. MS Bhat, NITK | Jan 2023 – Apr 2023
+Architected a full 5-stage pipelined microprocessor (Instruction Fetch, Decode, ALU, Memory, Write-Back) based on MIT OCW Beta-ISA. Built a custom GUI-based assembler in Python to translate assembly code to machine code.
+Architecture
+5-Stage Pipeline
+Toolchain
+Python GUI Assembler
+CPU Architecture
+Beta-ISA
+Verilog
+Python Assembler
+Security Module for Microprocessor
+October 2020 – March 2021
+Designed a 32-bit RISC processor in Verilog with its own ISA. Integrated a 128-bit AES encryption block to encrypt data/instructions in memory, thwarting hardware probing attacks. Developed a Python assembler that encrypts machine code on the fly.
+Security Engine
+128-bit AES Hardware
+Protection
+Anti-Probing Memory
+Hardware Security
+AES Encryption
+32-bit RISC
+Verilog
+4-bit ALU using Magic VLSI
+Under Prof. Ramesh Kini, NITK | Nov 2021
+Implemented a 4-bit ALU capable of Addition, AND, and OR operations using Pharosc vcslib 130nm technology standard cells. Wrote an automated bash testbench script that generates random test cases and verifies layout outputs.
+Standard Cells
+Pharosc 130nm
+Layout Area
+169,061 sq. µm
+Magic VLSI
+Custom Layout
+Bash Automation
+Python
+Live Object Detection Using Raspberry Pi
+Under Prof. Sumam David, NITK | Jan 2021 – Mar 2021
+Deployed MobileNet-SSD V2 object detection model on Raspberry Pi with remote SFTP access. Optimized frame pipeline and downscaled video stream to 480p to achieve real-time live object detection at a steady 15 FPS.
+Live Performance
+15 FPS Real-Time
+Edge Model
+MobileNet-SSD V2
+Raspberry Pi
+Edge AI
+Computer Vision
+Python
+Designed & Architected by Kruti Deepan Panda // Built with Antigravity 2.0

@@ -358,8 +358,9 @@ async function initBlogLoader() {
     return;
   }
 
-  // Showcase only the last 3 posted blogs
-  const recentPosts = posts.slice(0, 3);
+  // Showcase only the last 3 posted blogs on the homepage, but show all on the blog page
+  const isBlogPage = window.location.pathname.includes('blog.html');
+  const recentPosts = isBlogPage ? posts : posts.slice(0, 3);
 
   // Render Blog Cards Grouped by Series
   blogGrid.innerHTML = '';
