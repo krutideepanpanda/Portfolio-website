@@ -1,4 +1,4 @@
-name: Mobile Viewport Audit CI
+name: Portfolio UI Audit CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  mobile-ui-audit:
+  codex-ui-audit:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,8 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Run Puppeteer Mobile Overflow Audit
-      run: npm run test:mobile
+    - name: Run Codex Portfolio Audit
+      run: npm test
 
     - name: Upload Failure Screenshots
       if: failure()

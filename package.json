@@ -4,7 +4,10 @@
   "description": "Welcome to my personal portfolio website repository.",
   "main": "script.js",
   "scripts": {
-    "test:mobile": "node tests/audit_mobile_overflow.js"
+    "test:mobile": "node tests/audit_mobile_overflow.js",
+    "test:codex": "node tests/audit_codex.js",
+    "test:all": "npm run test:mobile && npm run test:codex",
+    "test": "npm run test:codex"
   },
   "repository": {
     "type": "git",
