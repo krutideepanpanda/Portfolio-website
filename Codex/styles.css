@@ -261,6 +261,11 @@ img { max-width: 100%; }
   .timeline-item { grid-template-columns: 1fr; gap: .6rem; }
 }
 
+@media (min-width: 761px) and (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; gap: .6rem; }
+  .content-grid .personal-grid { grid-template-columns: 1fr; }
+}
+
 /* Skills, leadership, contact, and writing */
 .skill-clusters { display: grid; gap: 1rem; }
 .skill-cluster { display: grid; grid-template-columns: minmax(180px, .8fr) 2fr; gap: 2rem; padding: 2rem; border: 1px solid var(--line); background: rgba(255,253,247,.62); }

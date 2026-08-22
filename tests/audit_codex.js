@@ -123,6 +123,18 @@ async function audit() {
     assert(!(await contactPage.$('a[href*="contact@krutideepanpanda.com"]')), 'Contact page contains the retired email address');
     await contactPage.close();
 
+    const aboutTabletPage = await browser.newPage();
+    for (const width of [761, 768, 900]) {
+      await aboutTabletPage.setViewport({ width, height: 900 });
+      await aboutTabletPage.goto(`${base}/Codex/about.html`, { waitUntil: 'networkidle0' });
+      const interestColumns = await aboutTabletPage.$eval(
+        '.content-grid:last-of-type .personal-grid',
+        (grid) => getComputedStyle(grid).gridTemplateColumns.trim().split(/\s+/).length
+      );
+      assert(interestColumns === 1, `About interests must use one readable column at ${width}px`);
+    }
+    await aboutTabletPage.close();
+
     const portalPage = await browser.newPage();
     for (const viewport of VIEWPORTS) {
       await portalPage.setViewport({ width: viewport.width, height: viewport.height });
@@ -153,6 +165,33 @@ async function audit() {
         && statusBox.right <= railBox.right;
     }));
     assert(statusReadability, 'Comparison status labels must remain horizontal, legible, and inside their rails');
+    assert(await portalPage.$eval('.build-queued', (card) => getComputedStyle(card).opacity === '1'), 'Queued comparison card must retain readable contrast');
+    const queuedContrastPass = await portalPage.$$eval(
+      '.build-queued .status-queued, .build-queued h3, .build-queued .build-body > p, .build-queued .button-disabled, .build-queued .muted',
+      (elements) => {
+        const rgb = (value) => value.match(/[\d.]+/g).slice(0, 3).map(Number);
+        const luminance = (value) => rgb(value).map((channel) => {
+          const normalized = channel / 255;
+          return normalized <= .03928 ? normalized / 12.92 : ((normalized + .055) / 1.055) ** 2.4;
+        }).reduce((sum, channel, index) => sum + channel * [.2126, .7152, .0722][index], 0);
+        const background = (element) => {
+          for (let node = element; node; node = node.parentElement) {
+            const color = getComputedStyle(node).backgroundColor;
+            const parts = color.match(/[\d.]+/g)?.map(Number) || [];
+            if (parts.length === 3 || (parts.length === 4 && parts[3] > 0)) return color;
+          }
+          return 'rgb(255, 255, 255)';
+        };
+        return elements.every((element) => {
+          const foregroundLuminance = luminance(getComputedStyle(element).color);
+          const backgroundLuminance = luminance(background(element));
+          return (Math.max(foregroundLuminance, backgroundLuminance) + .05)
+            / (Math.min(foregroundLuminance, backgroundLuminance) + .05) >= 4.5;
+        });
+      }
+    );
+    assert(queuedContrastPass, 'Queued comparison text must meet WCAG AA contrast');
+    assert(await portalPage.$('a[href="mailto:krutideepan123@gmail.com"]'), 'Comparison portal must use the verified email address');
     await portalPage.close();
 
     console.log('Codex portfolio audit passed: routes, responsive layouts, project grouping, contact details, blog rendering, safe article IDs, links, and reduced motion.');

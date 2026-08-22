@@ -13,7 +13,7 @@
 - Use `Blog/posts.json` and `Blog/<id>/article.md` for blog content.
 - Link a project repository only after verifying it on `https://github.com/krutideepanpanda`.
 - Do not invent professional claims, project metrics, dates, blog posts, or repositories.
-- The Codex contact page may expose only `contact@krutideepanpanda.com`, the approved LinkedIn profile, and GitHub. Do not expose the private phone number.
+- The Codex contact page may expose only `krutideepan123@gmail.com`, the approved LinkedIn profile, and GitHub. Do not expose the private phone number.
 
 ## Quality gates
 
