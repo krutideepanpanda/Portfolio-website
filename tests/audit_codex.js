@@ -115,6 +115,11 @@ async function audit() {
     assert(await portalPage.$('a[href="Codex/index.html"]'), 'Comparison portal is missing the Codex portfolio link');
     assert(await portalPage.$('a[href="Codex/blog.html"]'), 'Comparison portal is missing the Codex blog link');
     assert(await portalPage.$('a[href="Antigravity/index.html"]'), 'Comparison portal is missing the Antigravity portfolio link');
+    assert(await portalPage.$('a[href="Antigravity/landing.html"]'), 'Comparison portal is missing the previous Antigravity landing link');
+    const previousLandingSource = fs.readFileSync(path.join(ROOT, 'Antigravity', 'landing.html'), 'utf8');
+    assert(previousLandingSource.includes('href="index.html"'), 'Previous landing is missing the Antigravity portfolio link');
+    assert(previousLandingSource.includes('href="../index.html"'), 'Previous landing is missing the current landing link');
+    assert(previousLandingSource.includes('badge-ongoing') && previousLandingSource.includes('Ongoing'), 'Previous landing must keep Codex marked Ongoing');
     const antigravitySource = fs.readFileSync(path.join(ROOT, 'Antigravity', 'index.html'), 'utf8');
     assert(antigravitySource.includes('href="../index.html"'), 'Antigravity landing is missing its return-to-portal link');
     const codexStatus = await portalPage.$eval('.build-active .status', (element) => element.textContent.trim());
