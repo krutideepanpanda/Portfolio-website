@@ -2,6 +2,7 @@ const repoGrid = document.querySelector('[data-github-repos]');
 const repoStatus = document.querySelector('[data-github-status]');
 const githubProfile = 'https://github.com/krutideepanpanda';
 const githubEndpoint = 'https://api.github.com/users/krutideepanpanda/repos?type=owner&sort=updated&direction=desc&per_page=100';
+const excludedRepositories = new Set(['krutideepanpanda.github.io']);
 
 const makeElement = (tag, className, text) => {
   const element = document.createElement(tag);
@@ -20,7 +21,7 @@ const makeRepoCard = (repo) => {
   top.append(makeElement('span', '', repo.fork ? 'Public fork' : 'Public repository'));
   top.append(makeElement('span', '', `Updated ${formatDate(repo.pushed_at || repo.updated_at)}`));
 
-  const title = makeElement('h2', '', repo.name.replaceAll('-', ' '));
+  const title = makeElement('h2', '', repo.name.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim());
   const description = makeElement('p', '', repo.description || 'Explore the source, documentation, and project history on GitHub.');
   const tags = makeElement('div', 'tag-list');
   const labels = [repo.language, ...(repo.topics || [])].filter(Boolean).slice(0, 4);
@@ -59,7 +60,9 @@ if (repoGrid && repoStatus) {
       return response.json();
     })
     .then((repositories) => {
-      const publicRepositories = repositories.filter((repo) => !repo.private);
+      const publicRepositories = repositories.filter((repo) => (
+        !repo.private && !excludedRepositories.has(repo.name.toLowerCase())
+      ));
       repoGrid.replaceChildren(...publicRepositories.map(makeRepoCard));
       repoGrid.setAttribute('aria-busy', 'false');
       repoStatus.textContent = `${publicRepositories.length} public repositories · Synced from GitHub`;

@@ -103,6 +103,26 @@ async function audit() {
     assert(await motionPage.$eval('.reveal', (element) => getComputedStyle(element).opacity === '1'), 'Reduced-motion content must remain visible');
     await motionPage.close();
 
+    const projectsPage = await browser.newPage();
+    await projectsPage.goto(`${base}/Codex/projects.html`, { waitUntil: 'networkidle0' });
+    const projectHeadings = await projectsPage.$$eval(
+      '.project-group-heading h2, .github-heading h2',
+      (headings) => headings.map((heading) => heading.textContent.trim())
+    );
+    assert(
+      JSON.stringify(projectHeadings) === JSON.stringify(['Industry projects.', 'Academic projects.', 'Open-source work.']),
+      'Projects must keep industry, academic, and public repository sections separate'
+    );
+    assert(await projectsPage.$$eval('.repo-card h2', (headings) => headings.every((heading) => !heading.textContent.includes('_'))), 'Repository titles must be human-readable');
+    assert(await projectsPage.$$eval('.repo-card h2', (headings) => headings.every((heading) => heading.textContent.trim().toLowerCase() !== 'krutideepanpanda.github.io')), 'Obsolete GitHub Pages repository must stay excluded');
+    await projectsPage.close();
+
+    const contactPage = await browser.newPage();
+    await contactPage.goto(`${base}/Codex/contact.html`, { waitUntil: 'networkidle0' });
+    assert(await contactPage.$('a[href^="mailto:krutideepan123@gmail.com"]'), 'Contact page must use the verified email address');
+    assert(!(await contactPage.$('a[href*="contact@krutideepanpanda.com"]')), 'Contact page contains the retired email address');
+    await contactPage.close();
+
     const portalPage = await browser.newPage();
     for (const viewport of VIEWPORTS) {
       await portalPage.setViewport({ width: viewport.width, height: viewport.height });
@@ -124,9 +144,18 @@ async function audit() {
     assert(antigravitySource.includes('href="../index.html"'), 'Antigravity landing is missing its return-to-portal link');
     const codexStatus = await portalPage.$eval('.build-active .status', (element) => element.textContent.trim());
     assert(codexStatus === 'Ongoing', 'OpenAI Codex must remain marked Ongoing');
+    const statusReadability = await portalPage.$$eval('.status', (statuses) => statuses.every((status) => {
+      const statusBox = status.getBoundingClientRect();
+      const railBox = status.parentElement.getBoundingClientRect();
+      return getComputedStyle(status).writingMode === 'horizontal-tb'
+        && Number.parseFloat(getComputedStyle(status).fontSize) >= 12
+        && statusBox.left >= railBox.left
+        && statusBox.right <= railBox.right;
+    }));
+    assert(statusReadability, 'Comparison status labels must remain horizontal, legible, and inside their rails');
     await portalPage.close();
 
-    console.log('Codex portfolio audit passed: routes, responsive layouts, blog rendering, safe article IDs, links, and reduced motion.');
+    console.log('Codex portfolio audit passed: routes, responsive layouts, project grouping, contact details, blog rendering, safe article IDs, links, and reduced motion.');
   } finally {
     await browser.close();
     await new Promise((resolve) => server.close(resolve));

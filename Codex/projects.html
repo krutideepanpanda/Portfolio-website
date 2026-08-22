@@ -12,23 +12,33 @@
   <main id="main">
     <header class="page-hero shell"><div class="page-hero-grid"><p class="section-number reveal">03 / Projects</p><div><h1 class="reveal">Systems made under <em>real constraints.</em></h1><p class="page-deck reveal">Silicon tooling, processor architecture, verification systems, and open-source experiments built from the transistor level upward.</p></div></div></header>
 
-    <section class="shell section-pad" aria-labelledby="selected-projects-title">
-      <div class="github-heading reveal"><p class="section-number">Selected work</p><div><h2 id="selected-projects-title">Industry and academic systems.</h2></div></div>
-      <div class="project-grid">
-        <article class="project-card project-card-featured reveal"><div class="project-card-top"><span>Professional</span><span>2023—Present</span></div><h2>Internal CAD automation</h2><p>Python and TCL workflows for analog circuit sizing, formal verification, automated regressions, and repeatable engineering handoffs.</p><div class="tag-list"><span class="tag">Python</span><span class="tag">TCL</span><span class="tag">Analog CAD</span></div><p class="project-source">AMD · Professional work</p></article>
-        <article class="project-card reveal"><div class="project-card-top"><span>Professional</span><span>Verification</span></div><h2>System-level AMS modeling</h2><p>Mixed-signal environments using XMODEL and MODELZEN, with equivalence and static-property verification through industry signoff tools.</p><div class="tag-list"><span class="tag">RNM</span><span class="tag">XMODEL</span><span class="tag">Formal</span></div><p class="project-source">AMD · Professional work</p></article>
-        <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2023</span></div><h2>Configurable CNN hardware framework</h2><p>Scalable FPGA memory architecture designed to exploit convolution pixel reuse across changing kernel and stride sizes.</p><div class="tag-list"><span class="tag">FPGA</span><span class="tag">CNN</span><span class="tag">Verilog</span></div></article>
-        <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2023</span></div><h2>MIT Beta-ISA pipelined processor</h2><p>A five-stage CPU paired with a custom Python GUI assembler for translating assembly into machine code.</p><div class="tag-list"><span class="tag">CPU architecture</span><span class="tag">Verilog</span><span class="tag">Python</span></div></article>
-        <article class="project-card reveal"><div class="project-card-top"><span>Independent study</span><span>2020—2021</span></div><h2>Anti-probing processor security</h2><p>A 32-bit RISC processor with a 128-bit AES block and assembler-side encryption for protected memory contents.</p><div class="tag-list"><span class="tag">AES</span><span class="tag">RISC</span><span class="tag">Hardware security</span></div></article>
-        <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2021</span></div><h2>Raspberry Pi object detection</h2><p>MobileNet-SSD V2 deployed on a Raspberry Pi with a tuned 480p pipeline reaching 15 FPS.</p><div class="tag-list"><span class="tag">Edge AI</span><span class="tag">Raspberry Pi</span><span class="tag">Python</span></div></article>
-      </div>
+    <section class="shell section-pad projects-catalog" aria-label="Project categories">
+      <section class="project-group" aria-labelledby="industry-projects-title">
+        <div class="project-group-heading reveal"><p class="section-number">01 / Industry</p><div><h2 id="industry-projects-title">Industry projects.</h2><p>Professional work at AMD across analog CAD automation and mixed-signal verification.</p></div></div>
+        <div class="project-grid">
+          <article class="project-card project-card-featured reveal"><div class="project-card-top"><span>Professional</span><span>2023—Present</span></div><h2>Internal CAD automation</h2><p>Python and TCL workflows for analog circuit sizing, formal verification, automated regressions, and repeatable engineering handoffs.</p><div class="tag-list"><span class="tag">Python</span><span class="tag">TCL</span><span class="tag">Analog CAD</span></div><p class="project-source">AMD · Professional work</p></article>
+          <article class="project-card reveal"><div class="project-card-top"><span>Professional</span><span>Verification</span></div><h2>System-level AMS modeling</h2><p>Mixed-signal environments using XMODEL and MODELZEN, with equivalence and static-property verification through industry signoff tools.</p><div class="tag-list"><span class="tag">RNM</span><span class="tag">XMODEL</span><span class="tag">Formal</span></div><p class="project-source">AMD · Professional work</p></article>
+        </div>
+      </section>
+
+      <section class="project-group" aria-labelledby="academic-projects-title">
+        <div class="project-group-heading reveal"><p class="section-number">02 / Academic</p><div><h2 id="academic-projects-title">Academic projects.</h2><p>Undergraduate research and engineering work completed at NITK.</p></div></div>
+        <div class="project-grid">
+          <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2023</span></div><h2>Configurable CNN hardware framework</h2><p>Scalable FPGA memory architecture designed to exploit convolution pixel reuse across changing kernel and stride sizes.</p><div class="tag-list"><span class="tag">FPGA</span><span class="tag">CNN</span><span class="tag">Verilog</span></div></article>
+          <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2023</span></div><h2>MIT Beta-ISA pipelined processor</h2><p>A five-stage CPU paired with a custom Python GUI assembler for translating assembly into machine code.</p><div class="tag-list"><span class="tag">CPU architecture</span><span class="tag">Verilog</span><span class="tag">Python</span></div></article>
+          <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2022</span></div><h2>RISC-V microcontroller using OpenLane</h2><p>PICORV32 with custom co-processors and an adapted OpenLane flow for SkyWater 130 nm GDSII generation and design-space exploration.</p><div class="tag-list"><span class="tag">RISC-V</span><span class="tag">OpenLane</span><span class="tag">SkyWater 130 nm</span></div></article>
+          <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2020—2021</span></div><h2>Security module for microprocessor</h2><p>A 32-bit RISC processor with a 128-bit AES block and assembler-side encryption for protected memory contents.</p><div class="tag-list"><span class="tag">AES</span><span class="tag">RISC</span><span class="tag">Hardware security</span></div></article>
+          <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2021</span></div><h2>4-bit ALU using Magic VLSI</h2><p>A standard-cell ALU for addition, AND, and OR operations with a Bash-driven randomized layout verification flow.</p><div class="tag-list"><span class="tag">Magic VLSI</span><span class="tag">Layout</span><span class="tag">Bash</span></div></article>
+          <article class="project-card reveal"><div class="project-card-top"><span>Academic · NITK</span><span>2021</span></div><h2>Raspberry Pi object detection</h2><p>MobileNet-SSD V2 deployed on a Raspberry Pi with a tuned 480p pipeline reaching 15 FPS.</p><div class="tag-list"><span class="tag">Edge AI</span><span class="tag">Raspberry Pi</span><span class="tag">Python</span></div></article>
+        </div>
+      </section>
     </section>
 
     <section class="github-section" aria-labelledby="github-title">
       <div class="shell section-pad">
         <div class="github-heading reveal">
-          <p class="section-number">Live from GitHub</p>
-          <div><h2 id="github-title">Open-source work.</h2><p>Every public repository owned by <a href="https://github.com/krutideepanpanda" target="_blank" rel="noopener noreferrer">@krutideepanpanda</a>, ordered by its latest update.</p><p class="github-status" data-github-status aria-live="polite">Loading public repositories…</p></div>
+          <p class="section-number">03 / Public repositories</p>
+          <div><h2 id="github-title">Open-source work.</h2><p>Public engineering repositories from <a href="https://github.com/krutideepanpanda" target="_blank" rel="noopener noreferrer">@krutideepanpanda</a>, ordered by their latest update.</p><p class="github-status" data-github-status aria-live="polite">Loading public repositories…</p></div>
         </div>
         <div class="project-grid" data-github-repos aria-busy="true">
           <div class="repo-empty">Connecting to GitHub…</div>
