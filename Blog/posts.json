@@ -1,5 +1,21 @@
 [
   {
+    "id": "google-antigravity-final-verdict",
+    "title": "Google Antigravity - Final verdict",
+    "date": "August 22, 2026",
+    "readTime": "5 min read",
+    "category": "AI Exploration",
+    "summary": "My final thoughts on how my experiments with Antigravity went.",
+    "url": "article.html?id=google-antigravity-final-verdict",
+    "tags": [
+      "Antigravity"
+    ],
+    "featured": false,
+    "series": "ai-exploration",
+    "seriesTitle": "KDP's AI exploration",
+    "chapter": 5
+  },
+  {
     "id": "antigravity-64bit-riscv-processor",
     "title": "Antigravity - 64bit RISCV Processor",
     "date": "August 22, 2026",

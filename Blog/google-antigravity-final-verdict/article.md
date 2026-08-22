@@ -1,0 +1,27 @@
+---
+title: "Google Antigravity - Final verdict"
+author: "Kruti Deepan Panda"
+date: "August 22, 2026"
+category: "AI Exploration"
+readTime: "5 min read"
+tags: ["Antigravity"]
+series: "ai-exploration"
+seriesTitle: "KDP's AI exploration"
+chapter: 5
+summary: "My final thoughts on how my experiments with Antigravity went."
+---
+
+# Google Antigravity - Final verdict
+
+Goggle's Antigravity had some very interesting features which greatly enhanced my experience, but Gemini 3.1 pro is too far behind the rest of the competition.
+I loved the fact that I can actually go to the Implementation plan and make comments on specific parts of the text. My subscription also came with image and video generation models, which was a great thing to have.
+However, that's where its "good to have"s end. 
+
+To truly get your money's worth from Gemini you will have to repeatedly use /goal and /grill-me to ensure better quality outputs. Although Antigravity in no way pushes you towards these, nor does it tell you about these features if you ask Gemini itself.
+This feels like a huge, missed opportunity by Google. I mean you already have a LLM I am talking to, can't you atleast train it to teach me when I am doing bad prompts? Or atleast show a loading screen tip, or something!
+It is safe to assume that if I am a vibe-coder using Antigravity, I do not have the IQ to learn all this on my own. Even if I did, I DO NOT WANT TO, I am vibing here not try-harding to squeeze max performance out of Gemini.
+
+The worst problem I had was the model itself. Gemini 3.1 pro is almost 6 months behind other flagship models (as of writing this article). This means it is terribly outdated in many aspects.
+There were quite a lot of times when I had to switch to Claude Opus 4.6 to unblock Gemini 3.1 pro from chasing its own tail.
+
+With most of my planned projects failed, I am so glad to be exiting Antigravity.
