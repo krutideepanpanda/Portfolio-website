@@ -6,8 +6,10 @@
   "scripts": {
     "test:mobile": "node tests/audit_mobile_overflow.js",
     "test:codex": "node tests/audit_codex.js",
+    "test:security": "node tests/audit_security.js",
     "test:all": "npm run test:mobile && npm run test:codex",
-    "test": "npm run test:codex"
+    "test": "npm run test:codex && npm run test:security",
+    "build:site": "node scripts/build_site.js"
   },
   "repository": {
     "type": "git",

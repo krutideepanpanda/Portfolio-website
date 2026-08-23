@@ -329,6 +329,9 @@ function initCardTilt() {
    6. Dynamic Blog Loader (Picks up posts from D:\Deepan\Portfolio website\Blog)
    ========================================================================== */
 async function initBlogLoader() {
+  if (typeof window.secureInitBlogLoader === 'function') {
+    return window.secureInitBlogLoader();
+  }
   const blogGrid = document.getElementById('blog-grid');
   if (!blogGrid) return;
 
@@ -478,13 +481,10 @@ async function initBlogLoader() {
    ========================================================================== */
 function initPIIDecoder() {
   const emailB64 = "a3J1dGlkZWVwYW4xMjNAZ21haWwuY29t"; // Base64 for [OBFUSCATED_EMAIL]
-  const phoneB64 = "KzkxNzAyMjIwNjIwMw==";             // Base64 for [OBFUSCATED_PHONE]
-  
+
   let email = "";
-  let phone = "";
   try {
     email = atob(emailB64);
-    phone = atob(phoneB64);
   } catch (e) {
     return; // graceful failure
   }
@@ -500,11 +500,4 @@ function initPIIDecoder() {
     el.textContent = email;
   });
 
-  // Obfuscate Phone Links & Text
-  document.querySelectorAll('.obf-phone').forEach(el => {
-    if (el.tagName === 'A') el.href = `tel:${phone}`;
-  });
-  document.querySelectorAll('.obf-phone-text').forEach(el => {
-    el.textContent = `(+91) ${phone.substring(3)}`;
-  });
 }

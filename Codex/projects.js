@@ -3,6 +3,7 @@ const repoStatus = document.querySelector('[data-github-status]');
 const githubProfile = 'https://github.com/krutideepanpanda';
 const githubEndpoint = 'https://api.github.com/users/krutideepanpanda/repos?type=owner&sort=updated&direction=desc&per_page=100';
 const excludedRepositories = new Set(['krutideepanpanda.github.io']);
+const repositoryNamePattern = /^[a-z0-9._-]+$/i;
 
 const makeElement = (tag, className, text) => {
   const element = document.createElement(tag);
@@ -15,6 +16,15 @@ const formatDate = (dateString) => new Intl.DateTimeFormat('en', {
   month: 'short', year: 'numeric',
 }).format(new Date(dateString));
 
+const isOwnedPublicRepository = (repo) => Boolean(
+  repo
+  && repo.private === false
+  && repo.owner?.login === 'krutideepanpanda'
+  && typeof repo.name === 'string'
+  && repositoryNamePattern.test(repo.name)
+  && !excludedRepositories.has(repo.name.toLowerCase())
+);
+
 const makeRepoCard = (repo) => {
   const card = makeElement('article', 'project-card repo-card');
   const top = makeElement('div', 'project-card-top');
@@ -24,7 +34,9 @@ const makeRepoCard = (repo) => {
   const title = makeElement('h2', '', repo.name.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim());
   const description = makeElement('p', '', repo.description || 'Explore the source, documentation, and project history on GitHub.');
   const tags = makeElement('div', 'tag-list');
-  const labels = [repo.language, ...(repo.topics || [])].filter(Boolean).slice(0, 4);
+  const labels = [repo.language, ...(Array.isArray(repo.topics) ? repo.topics : [])]
+    .filter((label) => typeof label === 'string' && label.trim())
+    .slice(0, 4);
   (labels.length ? labels : ['Source code']).forEach((label) => tags.append(makeElement('span', 'tag', label)));
 
   const meta = makeElement('div', 'repo-card-meta');
@@ -32,7 +44,7 @@ const makeRepoCard = (repo) => {
   if (repo.archived) meta.append(makeElement('span', '', 'Archived'));
 
   const link = makeElement('a', 'project-link', 'Open repository ↗');
-  link.href = repo.html_url;
+  link.href = `${githubProfile}/${encodeURIComponent(repo.name)}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   card.append(top, title, description, tags, meta, link);
@@ -60,9 +72,8 @@ if (repoGrid && repoStatus) {
       return response.json();
     })
     .then((repositories) => {
-      const publicRepositories = repositories.filter((repo) => (
-        !repo.private && !excludedRepositories.has(repo.name.toLowerCase())
-      ));
+      if (!Array.isArray(repositories)) throw new Error('GitHub returned an invalid repository list');
+      const publicRepositories = repositories.filter(isOwnedPublicRepository);
       repoGrid.replaceChildren(...publicRepositories.map(makeRepoCard));
       repoGrid.setAttribute('aria-busy', 'false');
       repoStatus.textContent = `${publicRepositories.length} public repositories · Synced from GitHub`;
