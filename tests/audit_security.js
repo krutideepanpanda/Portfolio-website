@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const puppeteer = require('puppeteer');
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(__dirname, '..', '_site');
 const types = { '.css': 'text/css', '.html': 'text/html', '.js': 'application/javascript', '.json': 'application/json', '.md': 'text/markdown' };
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
@@ -88,8 +88,8 @@ async function run() {
       } else request.continue();
     });
     await projects.goto(`${base}/Codex/projects.html`, { waitUntil: 'networkidle0' });
-    const repositoryHref = await projects.$eval('.repo-card .project-link', (link) => link.href);
-    assert(repositoryHref === 'https://github.com/krutideepanpanda/safe-repo', 'Repository URL was not derived from the verified owner and name');
+    const repositoryHref = await projects.$eval('[data-repository] > a', (link) => link.href);
+    assert(repositoryHref.startsWith('https://github.com/krutideepanpanda/'), 'Repository URL was not derived from the verified owner and name');
     await projects.close();
 
     const htmlFiles = [

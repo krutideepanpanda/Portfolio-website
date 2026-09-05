@@ -1,0 +1,102 @@
+{
+  "updatedAt": "2026-09-05T15:19:15.197Z",
+  "repositories": [
+    {
+      "name": "Codex_RISCV_64bit_Processor",
+      "description": "",
+      "language": "SystemVerilog",
+      "topics": [],
+      "updated": "2026-08-24T13:24:35.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/Codex_RISCV_64bit_Processor"
+    },
+    {
+      "name": "Portfolio-website",
+      "description": "AI portfolio website test",
+      "language": "HTML",
+      "topics": [],
+      "updated": "2026-08-23T18:07:43.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/Portfolio-website"
+    },
+    {
+      "name": "Antigravity_RISCV_64bit_Processor",
+      "description": "",
+      "language": "Verilog",
+      "topics": [],
+      "updated": "2026-07-30T22:37:59.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/Antigravity_RISCV_64bit_Processor"
+    },
+    {
+      "name": "Antigravity-jellyfin-client",
+      "description": "Gemini Pro 3.1 test project",
+      "language": "Kotlin",
+      "topics": [],
+      "updated": "2026-07-30T19:06:52.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/Antigravity-jellyfin-client"
+    },
+    {
+      "name": "RISC-V-based-micro-controller-using-OpenLane",
+      "description": "This is part of EC383 - Mini Project in VLSI Design.",
+      "language": "Verilog",
+      "topics": [
+        "openlane",
+        "openlane-flow",
+        "verilog",
+        "verilog-processor",
+        "verilog-project",
+        "vlsi"
+      ],
+      "updated": "2022-05-08T07:11:53.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/RISC-V-based-micro-controller-using-OpenLane"
+    },
+    {
+      "name": "4-Bit-ALU-using-Magic-VLSI",
+      "description": "",
+      "language": "Python",
+      "topics": [],
+      "updated": "2021-11-08T09:08:52.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/4-Bit-ALU-using-Magic-VLSI"
+    },
+    {
+      "name": "Hydra_Bot_the_builder",
+      "description": "Submission for Bot the builder",
+      "language": "Python",
+      "topics": [],
+      "updated": "2021-10-08T17:36:03.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/Hydra_Bot_the_builder"
+    },
+    {
+      "name": "GitPrac",
+      "description": "CS50-Webdev-Week1 Git Practice",
+      "language": "HTML",
+      "topics": [],
+      "updated": "2020-07-06T04:28:27.000Z",
+      "fork": false,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/GitPrac"
+    },
+    {
+      "name": "Multiple-Choice-Quiz-JavaScript",
+      "description": "A Multiple Choice Quiz Created Using JavaScript",
+      "language": "",
+      "topics": [],
+      "updated": "2018-10-19T01:01:21.000Z",
+      "fork": true,
+      "archived": false,
+      "url": "https://github.com/krutideepanpanda/Multiple-Choice-Quiz-JavaScript"
+    }
+  ]
+}

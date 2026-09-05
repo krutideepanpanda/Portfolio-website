@@ -48,7 +48,7 @@ const copyTree = (source, destination, exclusions = new Set()) => {
 fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
 rootFiles.forEach((name) => copyFile(path.join(root, name), path.join(output, name)));
-copyTree(path.join(root, 'Codex'), path.join(output, 'Codex'));
+const {manifest} = require('../Codex/build.cjs').buildCodex(root, output);
 copyTree(path.join(root, 'Antigravity'), path.join(output, 'Antigravity'), new Set(['md-loader.js']));
 
 const postsPath = path.join(root, 'Blog', 'posts.json');
@@ -83,4 +83,7 @@ const auditOutput = (directory) => {
 };
 
 auditOutput(output);
-console.log(`Secure Pages artifact built with ${ids.size} validated blog posts.`);
+require('../Codex/social.cjs').buildSocial(output, manifest).then(() => {
+  auditOutput(output);
+  console.log(`Secure Pages artifact built: ${manifest.length} Codex pages and ${ids.size} validated blog posts.`);
+}).catch(error => { console.error(error); process.exitCode = 1; });

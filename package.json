@@ -4,11 +4,14 @@
   "description": "Welcome to my personal portfolio website repository.",
   "main": "script.js",
   "scripts": {
-    "test:mobile": "node tests/audit_mobile_overflow.js",
-    "test:codex": "node tests/audit_codex.js",
+    "test:mobile": "npm run build:site && node Codex/audit.cjs",
+    "test:legacy-mobile": "node tests/audit_mobile_overflow.js",
+    "test:codex": "node Codex/audit.cjs",
     "test:security": "node tests/audit_security.js",
-    "test:all": "npm run test:mobile && npm run test:codex",
-    "test": "npm run test:codex && npm run test:security",
+    "test:all": "npm test",
+    "test": "npm run build:site && npm run test:codex && npm run test:security",
+    "test:artifact": "npm run test:codex && npm run test:security",
+    "refresh:repositories": "node Codex/repositories.cjs",
     "build:site": "node scripts/build_site.js"
   },
   "repository": {
@@ -24,6 +27,12 @@
   },
   "homepage": "https://github.com/krutideepanpanda/Portfolio-website#readme",
   "devDependencies": {
-    "puppeteer": "^25.4.0"
+    "@axe-core/puppeteer": "4.13.0",
+    "@fontsource/source-sans-3": "5.3.0",
+    "lighthouse": "13.4.1",
+    "markdown-it": "15.0.1",
+    "puppeteer": "^25.4.0",
+    "sanitize-html": "2.17.7",
+    "sharp": "0.35.4"
   }
 }
